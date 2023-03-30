@@ -1,0 +1,135 @@
+.container {
+  display: inline-block;
+}
+
+.ensembleCorps {
+  margin: 15px;
+}
+
+  .actualité {
+    color: #e08e13;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    background: linear-gradient(to right, #e08e13 120%, transparent 50%) no-repeat center bottom/5% 4px;
+  }
+
+  .newsletter {
+    box-sizing: border-box;
+    padding: 5px 20px;
+    box-shadow: lightgray 4px 4px 20px;
+}
+
+.Image {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blocContact {
+  background-color: rgb(106, 106, 255);
+  color: white;
+  text-align: center;
+  padding: 10px 50px 35px;
+}
+
+.blocPourquoi {
+  background-color: #e08e13;
+  color: white;
+  text-align: center;
+  padding: 10px 50px 35px;
+}
+
+.blocLarge {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://www.dax.fr/wp-content/uploads/2020/08/ecoles-maternelles-et-elementaires-2020.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px;
+}
+
+.ensembleBloc {
+  display: inline-flex;
+  justify-content: center;
+  margin: 40px 150px 50px;
+}
+
+.textBlocLarge {
+  margin-top: 100px;
+}
+
+.titre_bloc {
+  padding-bottom: 15px;
+}
+
+.titre_blocPourquoi {
+  padding-bottom: 15px;
+}
+
+.titre_BlocLarge {
+  font-size: 50px;
+}
+
+.btnContact {
+  border: none;
+  font-family: "Montserrat",sans-serif;
+  color: white;
+  padding: 10px 40px 10px;
+  font-size: 1.275rem;
+  background-color: rgb(59, 59, 172);
+  cursor: pointer;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 400ms;
+  &:hover {
+        transform: scale(1.15);
+  }
+}
+
+.btnPourquoi {
+  border: none;
+  font-family: "Montserrat",sans-serif;
+  color: white;
+  padding: 10px 40px 10px;
+  font-size: 1.275rem;
+  background-color: #c07300;
+  cursor: pointer;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 400ms;
+  &:hover {
+        transform: scale(1.15);
+  }
+}
+
+.inscriptionNewsletter {
+  margin: 0px 20px 40px;
+  background-color: rgb(197, 197, 197);
+  display: flex;
+}
+
+.texteNewsletter {
+  padding: 50px 50px 60px;
+}
+
+.flyers {
+  height: 230px;
+  margin: 25px 100px 0px;
+  box-shadow: 0px 0px 10px 7px grey;
+}
+
+.email {
+  padding: 10px;
+  font-family: "Montserrat",sans-serif;
+  border: none;
+  margin-top: 15px;
+}
+
+.btnSend {
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}

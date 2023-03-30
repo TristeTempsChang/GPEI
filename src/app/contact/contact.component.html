@@ -1,0 +1,65 @@
+<div class="contactPage">
+    <div>
+        <h2 class="textContactPage">Formulaire de contact</h2>
+        <p style="text-align: center; margin: 0px 100px 0px">
+           Nous vous invitons à nous laisser vos coordonnées et à 
+           nous faire part de votre message dans le formulaire ci-dessous. 
+           Nous vous contacterons dans les meilleurs délais.
+        </p>
+    </div>
+    <div class="ensembleBlocContact">
+        <div class="blocInformation">
+            <div class="informationContent">
+                <div>
+                    <h2>Adresse</h2>
+                    <p class="content">65 Bd Charles de Gaulle, 91540 Mennecy</p>
+                </div>
+                <div style="margin-top: 50px">
+                    <h2>Tel</h2>
+                    <p class="content">06 84 17 14 26</p>
+                </div>
+                <div style="margin-top: 50px">
+                    <h2>E-mail</h2>
+                    <p class="content">secretariat.gpei@gmail.com</p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2640.4822412634394!2d2.428001015075125!3d48.56231182946273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5dd62b07147a7%3A0x6afd02b00a276e5c!2s65%20Bd%20Charles%20de%20Gaulle%2C%2091540%20Mennecy!5e0!3m2!1sfr!2sfr!4v1680181811446!5m2!1sfr!2sfr" width="359" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="blocFormulaire">
+            <div class="formContent">
+                <div class="headerBloc">
+                    <h2 style="color: white;">Mes informations</h2>
+                </div>
+                <div class="form">
+                    <form [formGroup]="contactForm">   
+                        <div class="form-group">
+                            <label for="title">Nom</label>
+                            <input id="title" type="text" formControlName="Nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Prénom</label>
+                            <input id="description" type="text" formControlName="Prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="imageUrl">E-mail</label>
+                            <input id="imageUrl" type="email" formControlName="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="imageUrl">E-mail</label>
+                            <input id="imageUrl" type="email" formControlName="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="imageUrl">E-mail</label>
+                            <input id="imageUrl" type="email" formControlName="E-mail">
+                        </div>
+                        <div class="action-buttons">
+                            <button type="submit" (click)="onSubmit()" [disabled]="contactForm.invalid">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

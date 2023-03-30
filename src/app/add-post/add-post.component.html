@@ -1,0 +1,30 @@
+<br />
+<br />
+<br />
+<br />
+<div class="form-card">
+    <h2>NOUVEAU POST</h2>
+<form [formGroup]="postForm">   
+    <div class="form-group">
+        <label for="title">Type</label>
+        <input id="title" type="text" formControlName="type">
+    </div>
+    <div class="form-group">
+        <label for="description">Titre</label>
+        <input id="description" type="text" formControlName="title">
+    </div>
+    <div class="form-group">
+        <label for="imageUrl">URL de l'image</label>
+        <input id="imageUrl" type="text" formControlName="imageUrl">
+    </div>
+    <div class="action-buttons">
+        <button type="submit" (click)="onSubmit()" [disabled]="postForm.invalid">Enregistrer</button>
+    </div>
+</form>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

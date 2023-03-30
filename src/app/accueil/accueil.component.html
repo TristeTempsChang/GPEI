@@ -1,0 +1,55 @@
+<app-carrousel [posts]="postActualite"></app-carrousel>
+<br />
+<h2 class="actualité">Actualités du jour</h2>
+<div style="text-align:center;">
+    <div *ngFor="let post of postActualite" class="container">
+        <div class="ensembleCorps">
+            <div class="newsletter">
+                <p>{{post.type}}</p>
+                <img class="Image" src="{{ post.imageUrl }}" alt="Image post">
+                <p>{{post.title}}</p>
+                <p>{{post.datePost | date: 'longDate'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ensembleBloc">
+    <div class="columnbloc">
+        <div class="blocContact">
+            <h2 class="titre_bloc">Vous avez des choses à nous dire ?</h2>
+            <p>Des informations à transmettre ? , des documents à faire parvenir ?</p>
+            <p>Ne vous inquiétez pas nous ne vous mangerons pas ;)</p>
+            <p>Vous pouvez prendre contact en appuyant sur le bouton juste en dessous !</p>
+            <br />
+            <button class="btnContact" routerLink="Contact">Nous contacter</button>
+        </div>
+        <div class="blocPourquoi">
+            <h2 class="titre_blocPourquoi">Envie de participer à l'amélioration de la vie scolaire de votre enfant ?</h2>
+            <div style="text-align: left;">
+                <p>- La GPEI aide à fournir à un grand nombres de parents-d'élève, les fournitures scolaires à chaque rentrée</p>
+                <p>- La GPEI s'occupe des trafics de drogues les plus destructeur de la commune de l'Essonne</p>
+                <p>- La GPEI vous accompagne même au toilette !</p>
+            </div>
+            <br />
+            <button class="btnPourquoi">Adhérer dès maintenant !</button>
+        </div>
+    </div>
+    <div class="blocLarge">
+        <div class="textBlocLarge">
+            <h2 class="titre_BlocLarge">Ceci est un placeholder !</h2>
+            <p>Les informations de ce bloc ne sont que temporaire</p> 
+            <p>En attendant ça fera office de déco ;)</p> 
+            <p>(Et au moins comme ça, ça me donne une idée de ce que ça donnerait !)</p> 
+        </div>
+    </div>
+</div>
+
+<div class="inscriptionNewsletter">
+    <div class="texteNewsletter">
+        <h2>Inscrivez vous à notre newsletter</h2>
+        <p>Vous pourrez connaître en avance tout les numéros gagnant du loto à venir, ainsi que bien d'autre avantage pour petit et grands !</p>
+        <input class="email" size="60" type="email" placeholder="Entrez une adresse e-mail valide !">
+        <button class="btnSend" type="submit">OK</button>
+    </div>
+    <img class="flyers" src="https://www.mennecy.net/_media/img/small/gpei-flyer.png" alt="flyers" />
+</div>

@@ -1,0 +1,118 @@
+<header>
+    <span class="relieur_resp">
+        <div class="header_resp">
+            <img id="logo2" [src]="imageUrl" alt="GPEI LOGO" routerLink=""/>
+            <button (click)="displayDropdownResp()" id="dropbtn">
+                <img id="logo3" [src]="iconUrl" alt="Hamburger_icon" />
+            </button>
+        </div>
+        <div id="dropdown-content_resp" style="display: none;">
+            <span class="relieur2" id="menu1" (click)="displayDropMenuContent()">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem;">DÉCOUVRIR</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content" style="display: none;">
+                    <a href="#">Qui sommes-nous ?</a>
+                    <a href="#">Nos derniers communiqués</a>
+                    <a href="#">Nos membres</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">INFORMATIONS</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content2" style="display: none;">
+                    <a href="#">Actualités</a>
+                    <a href="#">Conseils aux parents</a>
+                    <a href="#">Lettre d'infos</a>
+                    <a href="#">Revue des parents</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">ADHÉRER</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content3" style="display: none;">
+                    <a href="#">Pourquoi adhérer ?</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu4" (click)="displayDropMenuContent4()">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">CONTACT</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content4" style="display: none;">
+                    <a (click)="noneDropDownresp()" routerLink="Contact">Nous contacter</a>
+                </div>
+            </span>
+            <a href="#">MATERNELLE</a>
+            <a href="#">ÉLÉMENTAIRE</a>
+            <a href="#">COLLÈGE</a>
+            <a href="#">LYCÉE</a>
+            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" routerLink="addPost">
+                ADMINISTRATEUR
+              </a>
+        </div>
+    </span>
+    <div class="header_top">
+       <nav class="nav_top">
+          <ul class="list">
+            <li>
+                <a class="lien" href="#">MATERNELLE</a>
+            </li>
+              <li>
+                  <a class="lien" href="#">ÉLÉMENTAIRE</a>
+              </li>
+              <li>
+                  <a class="lien" href="#">COLLÈGE</a>
+              </li>
+              <li>
+                  <a class="lien" href="#">LYCÉE</a>
+              </li>
+          </ul>
+      </nav>
+      <a class="lien" id="admin" routerLink="addPost">
+        ADMINISTRATEUR
+      </a>
+    </div>
+    <span class="menu">
+        <img id="logo" [src]="imageUrl" alt="GPEI LOGO" routerLink=""/>
+        <span class="relieur">
+            <a class="font">DÉCOUVRIR</a>
+            <div class="dropdown-content">
+                <a href="#">Qui sommes-nous ?</a>
+                <a href="#">Nos derniers communiqués</a>
+                <a href="#">Nos membres</a>
+            </div>
+        </span>
+        <span class="relieur">
+            <a class="font">INFORMATIONS</a>
+            <div class="dropdown-content2">
+                <a href="#">Actualités</a>
+                <a href="#">Conseils aux parents</a>
+                <a href="#">Lettre d'infos</a>
+                <a href="#">Revue des parents</a>
+            </div>
+        </span>
+        <span class="relieur">
+            <a class="font">ADHÉRER</a>
+            <div class="dropdown-content3">
+                <a href="#">Pourquoi adhérer ?</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </span>
+        <span class="relieur">
+            <a class="font">CONTACT</a>
+            <div class="dropdown-content4">
+                <a routerLink="Contact">Nous contacter</a>
+            </div>
+        </span>
+    </span>
+ </header>
+ 
