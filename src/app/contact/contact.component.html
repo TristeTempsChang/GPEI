@@ -30,32 +30,35 @@
         <div class="blocFormulaire">
             <div class="formContent">
                 <div class="headerBloc">
-                    <h2 style="color: white;">Mes informations</h2>
+                    <h2 style="color: #965602;">Mes informations</h2>
                 </div>
                 <div class="form">
                     <form [formGroup]="contactForm">   
                         <div class="form-group">
-                            <label for="title">Nom</label>
-                            <input id="title" type="text" formControlName="Nom">
+                            <label for="name" style="margin-right: 40px; font-weight: bold; color: grey;">Nom * :</label>
+                            <input class="inputContact" name="name" type="text" size="60" formControlName="name">
                         </div>
                         <div class="form-group">
-                            <label for="description">Prénom</label>
-                            <input id="description" type="text" formControlName="Prénom">
+                            <label for="firstName" style="margin-right: 40px; font-weight: bold; color: grey;">Prénom * :</label>
+                            <input class="inputContact" name="firstName" type="text" size="60" formControlName="firstName">
                         </div>
                         <div class="form-group">
-                            <label for="imageUrl">E-mail</label>
-                            <input id="imageUrl" type="email" formControlName="E-mail">
+                            <label for="email" style="margin-right: 40px; font-weight: bold; color: grey;">E-mail :</label>
+                            <input class="inputContact" name="email" type="email" size="60" formControlName="email">
                         </div>
                         <div class="form-group">
-                            <label for="imageUrl">E-mail</label>
-                            <input id="imageUrl" type="email" formControlName="E-mail">
+                            <label for="subject" style="margin-right: 40px; font-weight: bold; color: grey;">Sujet :</label>
+                            <input class="inputContact" name="subject" type="text" size="60" formControlName="subject">
                         </div>
                         <div class="form-group">
-                            <label for="imageUrl">E-mail</label>
-                            <input id="imageUrl" type="email" formControlName="E-mail">
+                            <span class="messageEnsemble">
+                            <label for="message" style="margin-right: 20px; font-weight: bold; color: grey;">Message :</label>
+                            <textarea style="border: none; background-color: rgb(189, 189, 189); outline: none; font-size: 1rem;" name="message" rows="10" cols="63" formControlName="message"></textarea>
+                            </span>
                         </div>
-                        <div class="action-buttons">
-                            <button type="submit" (click)="onSubmit()" [disabled]="contactForm.invalid">Enregistrer</button>
+                        <div class="footerBloc">
+                            <em>* champs obligatoires</em>
+                            <button type="submit" (click)="onSubmit(contactForm.value)" [disabled]="!contactForm.valid">Envoyer votre message</button>
                         </div>
                     </form>
                 </div>

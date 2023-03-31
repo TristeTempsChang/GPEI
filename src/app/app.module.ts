@@ -14,6 +14,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { ContactComponent } from './contact/contact.component';
 import { registerLocaleData } from '@angular/common';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { registerLocaleData } from '@angular/common';
     AppRoutingModule,
     CarouselModule,
     ReactiveFormsModule,
+    MessagesModule,
+    ToastModule,
+    InputTextModule,
+    FormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,35 +3,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostListModel } from '../Model/post-list.model';
 import { PostListService } from '../Service/post-list.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.scss']
+  styleUrls: ['./add-post.component.scss'],
+  providers: [MessageService]
 })
 export class AddPostComponent implements OnInit {
 
   postForm! : FormGroup;
   urlRegex!: RegExp;
+  value!: string;
 
   constructor(private formBuilder: FormBuilder,
               private postlistService: PostListService,
-              private router: Router) { }
+              private router: Router,
+              private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
-    this.postForm = this.formBuilder.group({
-      type: [null, [Validators.required] ],
-      title: [null, [Validators.required] ],
-      imageUrl: [null, [Validators.required] ]
-    }, {
-      updateOn: 'blur'
-  });
+    
   }
 
   onSubmit(): void {
-    this.postlistService.addPostOnList(this.postForm.value);
-    this.router.navigateByUrl("");
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
   }
 
 }
