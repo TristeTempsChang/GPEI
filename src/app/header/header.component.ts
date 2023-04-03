@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     const test = document.getElementById("dropdown-content_resp");
   
     const toggleDisplay = () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 897) {
         if (test != undefined) {
           if (test.style.display === "none") {
             test.style.display = "block";
