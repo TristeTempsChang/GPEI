@@ -12,7 +12,9 @@ export class CarrouselComponent implements AfterViewInit {
 
   @Input() posts!: any[];
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef) { 
+    Carousel.prototype.onTouchMove = () => { };
+  }
 
   ngAfterViewInit() {
     this.cdr.detectChanges();

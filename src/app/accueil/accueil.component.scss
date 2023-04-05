@@ -26,7 +26,80 @@
     object-fit: cover;
 }
 
-.blocContact {
+.parent {
+  display: grid;
+  grid-template-columns: 400px 600px;
+  grid-template-rows: repeat(2, 330px) 200px;
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
+  margin: 50px auto 50px;
+  justify-content: center;
+}
+  
+  .div1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    background-color: rgb(106, 106, 255);
+    color: white;
+    text-align: center;
+    padding: 0px 20px 0px;
+  }
+
+  .btnContact {
+    border: none;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    padding: 10px 40px 10px;
+    font-size: 1.275rem;
+    background-color: rgb(59, 59, 172);
+    cursor: pointer;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 400ms;
+    &:hover {
+      transform: scale(1.09);
+    }
+  }
+
+  .div2 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    background-color: #e08e13;
+    color: white;
+    text-align: center;
+    padding: 0px 40px 0px;
+  }
+
+  .btnPourquoi {
+    border: none;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    padding: 10px 10px 10px;
+    font-size: 1.275rem;
+    margin-top: 30px;
+    background-color: #c07300;
+    cursor: pointer;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 400ms;
+    &:hover {
+          transform: scale(1.09);
+    }
+  }
+
+  .div3 { 
+    grid-area: 3 / 1 / 4 / 3; 
+    background-color: rgb(197, 197, 197);
+  }
+
+  .div4 { 
+    grid-area: 1 / 2 / 3 / 3; 
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://www.dax.fr/wp-content/uploads/2020/08/ecoles-maternelles-et-elementaires-2020.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+
+/*.blocContact {
   background-color: rgb(106, 106, 255);
   color: white;
   text-align: center;
@@ -102,7 +175,7 @@
   &:hover {
         transform: scale(1.15);
   }
-}
+}*/
 
 .inscriptionNewsletter {
   margin: 0px 20px 40px;
@@ -133,3 +206,50 @@
   margin-left: 10px;
   cursor: pointer;
 }
+
+/*@media screen and (max-width: 1140px) {
+  .columnbloc {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .ensembleBloc {
+    display: inline-block;
+    justify-content: center;
+    margin: 40px 80px 50px;
+  }
+
+  .blocContact {
+    background-color: rgb(106, 106, 255);
+    color: white;
+    text-align: center;
+    padding: 10px 50px 35px;
+  }
+  
+  .blocPourquoi {
+    background-color: #e08e13;
+    color: white;
+    text-align: center;
+    padding: 10px 50px 35px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .inscriptionNewsletter {
+    margin: 0px 20px 40px;
+  }
+}
+
+@media screen and (max-width: 876px) {
+  .columnbloc {
+    display: inline-block;
+    justify-content: center;
+  }
+
+  .ensembleBloc {
+    display: block;
+    justify-content: center;
+    margin: 40px 80px 50px;
+  }
+}
+*/

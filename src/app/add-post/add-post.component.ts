@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostListModel } from '../Model/post-list.model';
 import { PostListService } from '../Service/post-list.service';
@@ -13,7 +13,7 @@ import { MessageService } from 'primeng/api';
 })
 export class AddPostComponent implements OnInit {
 
-  postForm! : FormGroup;
+  loginForm! : FormGroup;
   urlRegex!: RegExp;
   value!: string;
 
@@ -23,11 +23,23 @@ export class AddPostComponent implements OnInit {
               private messageService: MessageService) { }
 
   ngOnInit(): void {
-    
+    this.loginForm = this.formBuilder.group({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    })
   }
 
-  onSubmit(): void {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+  onSubmit(value: any){
+      const pusername = 'test'
+      const ppassword = 'mdp'
+
+      if(pusername === value.username && ppassword === value.password){
+        console.log("c'est le bon login")
+      }
+      else {
+        console.log('ahhhh sa mère la pute')
+      }
+    
   }
 
 }
