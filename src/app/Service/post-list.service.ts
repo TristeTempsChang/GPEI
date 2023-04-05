@@ -8,7 +8,7 @@ export class PostListService {
     postlist: PostListModel[] = [
       {
         type: "FONCTIONNEMENT DE L'ÉCOLE",
-        title: "Comment la nouvelle réforme",
+        title: "La nouvelle réforme du gouvernement va considérablement vous avantager !",
         datePost: new Date(),
         imageUrl: "https://huffpost-focus.sirius.press/2022/12/29/110/0/2121/1193/1820/1023/75/0/76b5986_1672325371679-gettyimages-538397859.jpg",
         content: "Vraiment, on en parle pas assez mais starfoulilah Parcoursup ça a été inventé par des bâtards qui ne souhaite que la mort des étudiants..."
