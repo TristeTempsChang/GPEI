@@ -15,7 +15,7 @@
       ]
     },
     {
-      "target": "GPEI-Mennecy",
+      "target": "GPEI-MENNECY",
       "public": "dist/gpei-mennecy",
       "ignore": [
         "**/.*"
