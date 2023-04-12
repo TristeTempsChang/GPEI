@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { loginService } from '../Service/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +11,12 @@ export class HeaderComponent implements OnInit {
   imageUrl!: string;
   iconUrl! : string;
   plusIconUrl! :string;
+  authenticate! : boolean;
 
-  constructor() { }
+  constructor(private loginService: loginService,
+              private router: Router) { 
+    this.authenticate = this.loginService.getAuth();
+  }
 
   ngOnInit(): void {
     this.imageUrl = "http://portail-mennecy.net/_media/img/small/logo-gpei.png"
@@ -142,6 +148,11 @@ export class HeaderComponent implements OnInit {
       }
     }
 
+  }
+
+  onLogout() {
+    this.authenticate = false;
+    window.location.href = '';
   }
   
 

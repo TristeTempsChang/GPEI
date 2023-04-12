@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "GPEI-Mennecy:build:production",
+            "firebaseProject": "gpei-mennecy-7ae8b",
+            "firebaseHostingSite": "gpei-mennecy-7ae8b"
+          }
         }
       }
     }

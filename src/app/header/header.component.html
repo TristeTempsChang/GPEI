@@ -24,10 +24,10 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content2" style="display: none;">
-                    <a href="#">Actualités</a>
-                    <a href="#">Conseils aux parents</a>
-                    <a href="#">Lettre d'infos</a>
-                    <a href="#">Revue des parents</a>
+                    <a routerLink="actualite">Actualités</a>
+                    <a href="#">Documentation</a>
+                <a href="#">Lettre d'infos</a>
+                <a href="#">Revue utile</a>
                 </div>
             </span>
             <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()">
@@ -54,7 +54,7 @@
             <a href="#">ÉLÉMENTAIRE</a>
             <a href="#">COLLÈGE</a>
             <a href="#">LYCÉE</a>
-            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" routerLink="addPost">
+            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" routerLink="login">
                 ADMINISTRATEUR
               </a>
         </div>
@@ -62,28 +62,37 @@
     <div class="header_top">
        <nav class="nav_top">
           <ul class="list">
-            <li>
+            <li *ngIf="!authenticate">
                 <a class="lien" href="#">MATERNELLE</a>
             </li>
-              <li>
+              <li *ngIf="!authenticate">
                   <a class="lien" href="#">ÉLÉMENTAIRE</a>
               </li>
-              <li>
+              <li *ngIf="!authenticate">
                   <a class="lien" href="#">COLLÈGE</a>
               </li>
-              <li>
+              <li *ngIf="!authenticate">
                   <a class="lien" href="#">LYCÉE</a>
               </li>
           </ul>
       </nav>
-      <a class="lien" id="admin" routerLink="addPost">
+      <a class="lien" id="admin" routerLink="login" *ngIf="!authenticate">
         <i class="pi pi-user" style="margin-right: 5px;"></i>
         ADMINISTRATEUR
       </a>
+      <button id="admin2" style="border: none;" *ngIf="authenticate" (click)="onLogout()">
+        <i class="pi pi-sign-out" style="margin-right: 5px;"></i>
+        DÉCONNEXION
+      </button>
     </div>
     <span class="menu">
+        <span *ngIf="!authenticate">
         <img id="logo" [src]="imageUrl" alt="GPEI LOGO" routerLink=""/>
-        <span class="relieur">
+        </span>
+        <span *ngIf="authenticate">
+        <img id="logo" [src]="imageUrl" alt="GPEI LOGO" routerLink="admin"/>
+        </span>
+        <span class="relieur" *ngIf="!authenticate">
             <a class="font">DÉCOUVRIR</a>
             <div class="dropdown-content">
                 <a href="#">Qui sommes-nous ?</a>
@@ -91,16 +100,32 @@
                 <a href="#">Nos membres</a>
             </div>
         </span>
-        <span class="relieur">
-            <a class="font">INFORMATIONS</a>
-            <div class="dropdown-content2">
-                <a href="#">Actualités</a>
-                <a href="#">Conseils aux parents</a>
-                <a href="#">Lettre d'infos</a>
-                <a href="#">Revue des parents</a>
+        <span class="relieur" *ngIf="authenticate">
+            <a class="font">GESTION</a>
+            <div class="dropdown-content">
+                <a href="#">Gestion du carrousel</a>
+                <a routerLink="addPost">Gestion des actualités</a>
+                <a href="#">Gestion des pages de présentations</a>
             </div>
         </span>
-        <span class="relieur">
+        <span class="relieur" *ngIf="!authenticate">
+            <a class="font">INFORMATIONS</a>
+            <div class="dropdown-content2">
+                <a routerLink="actualite" >Actualités</a>
+                <a href="#">Documentation</a>
+                <a href="#">Lettre d'infos</a>
+                <a href="#">Revue utile</a>
+            </div>
+        </span>
+        <span class="relieur" *ngIf="authenticate">
+            <a class="font">DOCUMENTATIONS</a>
+            <div class="dropdown-content2">
+                <a href="#">Gestion des documents disponible</a>
+                <a href="#">Gestion des lettres d'infos</a>
+                <a href="#">Gestion des revues</a>
+            </div>
+        </span>
+        <span class="relieur" *ngIf="!authenticate">
             <a class="font">ADHÉRER</a>
             <div class="dropdown-content3">
                 <a href="#">Pourquoi adhérer ?</a>
@@ -108,7 +133,14 @@
                 <a href="#">Link 3</a>
             </div>
         </span>
-        <span class="relieur">
+        <span class="relieur" *ngIf="authenticate">
+            <a class="font">ADHÉRANT</a>
+            <div class="dropdown-content3">
+                <a href="#">Liste des demandes</a>
+                <a href="#">Envoi de mail</a>
+            </div>
+        </span>
+        <span class="relieur" *ngIf="!authenticate">
             <a class="font">CONTACT</a>
             <div class="dropdown-content4">
                 <a routerLink="contact">Nous contacter</a>

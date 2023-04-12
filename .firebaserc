@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gpei-mennecy-7ae8b"
+  },
+  "targets": {
+    "gpei-mennecy-7ae8b": {
+      "hosting": {
+        "GPEI-Mennecy": [
+          "gpei-mennecy-7ae8b"
+        ]
+      }
+    }
   }
 }

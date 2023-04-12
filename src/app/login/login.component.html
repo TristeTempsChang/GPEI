@@ -1,0 +1,14 @@
+<div class="form-box">
+    <div class="header-text">
+        Connexion administrateur
+    </div>
+    <form [formGroup]="loginForm">   
+    <input placeholder="Identifiant" type="text" formControlName="id"> 
+    <br />
+    <br />
+    <input placeholder="Mot de passe" type="password" formControlName="mdp"> 
+    <br />
+    <br />
+    <button type="submit" (click)="onLogin(loginForm.value)">Connexion</button>
+    </form>
+</div>

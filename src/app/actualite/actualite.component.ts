@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { PostListModel } from '../Model/post-list.model';
+import { PostListService } from '../Service/post-list.service';
+
+@Component({
+  selector: 'app-actualite',
+  templateUrl: './actualite.component.html',
+  styleUrls: ['./actualite.component.scss']
+})
+export class ActualiteComponent implements OnInit{
+
+  actualite!: PostListModel[];
+  
+  constructor(private postlistService: PostListService) { }
+  
+  ngOnInit(): void {
+    this.actualite = this.postlistService.getAllPostList();
+  }
+
+}

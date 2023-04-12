@@ -8,7 +8,7 @@ import { PostListModel } from '../Model/post-list.model';
 })
 export class PostComponent implements OnInit {
 
-  @Input() post!: PostListModel;
+  @Input() act!: PostListModel[];
 
   constructor() { }
 
