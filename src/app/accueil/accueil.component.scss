@@ -87,95 +87,19 @@
 
   .div3 { 
     grid-area: 3 / 1 / 4 / 3; 
-    background-color: rgb(197, 197, 197);
-  }
-
-  .div4 { 
-    grid-area: 1 / 2 / 3 / 3; 
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://www.dax.fr/wp-content/uploads/2020/08/ecoles-maternelles-et-elementaires-2020.jpg');
+    background: linear-gradient(90deg, rgba(109, 109, 109, 0.7) 0%, rgba(160, 160, 160, 0.7) 100%), url('../../assets/ecole2.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
   }
 
-
-/*.blocContact {
-  background-color: rgb(106, 106, 255);
-  color: white;
-  text-align: center;
-  padding: 10px 50px 35px;
-}
-
-.blocPourquoi {
-  background-color: #e08e13;
-  color: white;
-  text-align: center;
-  padding: 10px 50px 35px;
-}
-
-.blocLarge {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://www.dax.fr/wp-content/uploads/2020/08/ecoles-maternelles-et-elementaires-2020.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 100px;
-}
-
-.ensembleBloc {
-  display: inline-flex;
-  justify-content: center;
-  margin: 40px 150px 50px;
-}
-
-.textBlocLarge {
-  margin-top: 100px;
-}
-
-.titre_bloc {
-  padding-bottom: 15px;
-}
-
-.titre_blocPourquoi {
-  padding-bottom: 15px;
-}
-
-.titre_BlocLarge {
-  font-size: 50px;
-}
-
-.btnContact {
-  border: none;
-  font-family: "Montserrat",sans-serif;
-  color: white;
-  padding: 10px 40px 10px;
-  font-size: 1.275rem;
-  background-color: rgb(59, 59, 172);
-  cursor: pointer;
-  transform: scale(1);
-  transition-property: transform;
-  transition-duration: 400ms;
-  &:hover {
-        transform: scale(1.15);
+  .div4 { 
+    grid-area: 1 / 2 / 3 / 3; 
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/ecole1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
-}
-
-.btnPourquoi {
-  border: none;
-  font-family: "Montserrat",sans-serif;
-  color: white;
-  padding: 10px 40px 10px;
-  font-size: 1.275rem;
-  background-color: #c07300;
-  cursor: pointer;
-  transform: scale(1);
-  transition-property: transform;
-  transition-duration: 400ms;
-  &:hover {
-        transform: scale(1.15);
-  }
-}*/
 
 .inscriptionNewsletter {
   margin: 0px 20px 40px;
@@ -206,50 +130,3 @@
   margin-left: 10px;
   cursor: pointer;
 }
-
-/*@media screen and (max-width: 1140px) {
-  .columnbloc {
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  .ensembleBloc {
-    display: inline-block;
-    justify-content: center;
-    margin: 40px 80px 50px;
-  }
-
-  .blocContact {
-    background-color: rgb(106, 106, 255);
-    color: white;
-    text-align: center;
-    padding: 10px 50px 35px;
-  }
-  
-  .blocPourquoi {
-    background-color: #e08e13;
-    color: white;
-    text-align: center;
-    padding: 10px 50px 35px;
-  }
-}
-
-@media screen and (max-width: 1140px) {
-  .inscriptionNewsletter {
-    margin: 0px 20px 40px;
-  }
-}
-
-@media screen and (max-width: 876px) {
-  .columnbloc {
-    display: inline-block;
-    justify-content: center;
-  }
-
-  .ensembleBloc {
-    display: block;
-    justify-content: center;
-    margin: 40px 80px 50px;
-  }
-}
-*/
