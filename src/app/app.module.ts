@@ -27,6 +27,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -60,6 +61,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     InputTextModule,
     FormsModule,
     ButtonModule,
+    ChartModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

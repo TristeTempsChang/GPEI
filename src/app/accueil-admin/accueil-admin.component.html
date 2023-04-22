@@ -1,19 +1,35 @@
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
-<p>accueil-admin works!</p>
+<h1 class="title">Bienvenue sur la page <span style="color: #e08e13;">Admin !</span></h1>
+<div class="ensembleBlocAdmin">
+    <div class="gestion">
+        <span>
+            <p class="number">{{numberGestion}}</p>
+            <p>Nombre de post</p>
+        </span>
+        <i class="pi pi-cog"></i>
+    </div>
+    <div class="adhérent">
+        <span>
+            <p class="number">{{numberAdherent}}</p>
+            <p>Nombre adhésion</p>
+        </span>
+        <i class="pi pi-user-plus"></i>
+    </div>
+    <div class="document">
+        <span>
+            <p class="number">{{numberDoc}}</p>
+            <p>Nombre document</p>
+        </span>
+        <i class="pi pi-file-import"></i>
+    </div>
+    <div class="mail">
+        <span>
+            <p class="number">{{numberMail}}</p>
+            <p>Nombre de mail</p>
+        </span>
+        <i class="pi pi-envelope"></i>
+    </div>
+</div>
+<div class="card">
+    <p>Graphique de gestion :</p>
+    <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+</div>

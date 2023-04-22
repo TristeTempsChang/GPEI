@@ -10,13 +10,19 @@
     <div class="footer-left">
 
         <p class="footer-links">
-            <a class="link-1" href="#">Découvrir</a>
+            <a class="link-1" href="#" *ngIf="!authenticate">Découvrir</a>
 
-            <a href="#">Informations</a>
+            <a class="link-1" href="#" *ngIf="authenticate">Gestion</a>
 
-            <a href="#">Adhérer</a>
+            <a href="#" *ngIf="!authenticate">Informations</a>
 
-            <a routerLink="contact">Contact</a>
+            <a href="#" *ngIf="authenticate">Documentation</a>
+
+            <a href="#" *ngIf="!authenticate">Adhérer</a>
+
+            <a href="#" *ngIf="authenticate">Adhérent</a>
+
+            <a routerLink="contact" *ngIf="!authenticate">Contact</a>
         </p>
 
         <p>GPEI Mennecy &copy; {{footerDate | date: 'yyyy'}}</p>

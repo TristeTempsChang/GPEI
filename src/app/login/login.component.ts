@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         this.pwd = element.password;
       });
     })
-  }
+  } 
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
       console.log("Mauvais identifiant ou mot de passe");
       const authenticate = false;
       this.loginService.setAuth(authenticate);
+      this.loginForm.reset();
     }
   }
 

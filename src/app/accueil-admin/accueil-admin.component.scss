@@ -1,0 +1,81 @@
+.title {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 3rem;
+}
+
+.ensembleBlocAdmin {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.gestion {
+    background-color: #e08e13;
+    padding: 5px 10px 5px;
+    display: flex;
+    margin: 0px 10px 0px;
+}
+
+.adhérent {
+    background-color: green;
+    padding: 5px 10px 5px;
+    display: flex;
+    margin: 0px 10px 0px;
+}
+
+.document {
+    background-color: rgb(106, 106, 255);
+    padding: 5px 10px 5px;
+    display: flex;
+    margin: 0px 10px 0px;
+}
+
+.mail {
+    background-color: rgb(41, 41, 153);
+    padding: 5px 10px 5px;
+    display: flex;
+    margin: 0px 10px 0px;
+}
+
+.pi-cog {
+    font-size: 4.2rem;
+    color: #ffffff;
+    opacity: 0.4;
+    margin-left: 40px;
+    margin-top: 25px;
+}
+
+.pi-user-plus {
+    font-size: 4.2rem;
+    color: #ffffff;
+    opacity: 0.4;
+    margin-left: 30px;
+    margin-top: 22px;
+}
+
+.pi-file-import {
+    font-size: 4.2rem;
+    color: #ffffff;
+    opacity: 0.4;
+    margin-left: 30px;
+    margin-top: 26px;
+}
+
+.pi-envelope {
+    font-size: 4.2rem;
+    color: #ffffff;
+    opacity: 0.4;
+    margin-left: 30px;
+    margin-top: 26px;
+}
+
+.number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card {
+    margin: 70px 50px 50px;
+}
