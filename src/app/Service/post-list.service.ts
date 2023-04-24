@@ -1,46 +1,29 @@
 import { Injectable } from '@angular/core';
 import { PostListModel } from '../Model/post-list.model';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable, map } from 'rxjs';
+import { Timestamp } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostListService {
-    postlist: PostListModel[] = [
-      {
-        type: "FONCTIONNEMENT DE L'ÉCOLE",
-        title: "Nouveauté 2021",
-        datePost: new Date(),
-        imageUrl: "https://huffpost-focus.sirius.press/2022/12/29/110/0/2121/1193/1820/1023/75/0/76b5986_1672325371679-gettyimages-538397859.jpg",
-        content: "Vraiment, on en parle pas assez mais starfoulilah Parcoursup ça a été inventé par des bâtards qui ne souhaite que la mort des étudiants...",
-        id: 1
-      },
-      {
-        type: "GPEI",
-        title: "Nouveauté 2023",
-        datePost: new Date(),
-        imageUrl: "https://metricool.com/wp-content/uploads/jason-blackeye-364785-2-1.jpg",
-        content: "Comme chaque année, nous vous souhaitons de joyeuse fêtes et puis bah voilà hein. Y'avait plus d'idée pour faire du remplissage...",
-        id: 2
-      },
-      {
-        type: "Test",
-        title: "Nouveauté 2024",
-        datePost: new Date(),
-        imageUrl: "../assets/testDimension.png",
-        content: "Comme chaque année, nous vous souhaitons de joyeuse fêtes et puis bah voilà hein. Y'avait plus d'idée pour faire du remplissage...",
-        id: 3
-      }
-    ]
 
-    getAllPostList(): PostListModel[]{
-      return this.postlist;
+    constructor(private firestore: Firestore) {
+      
     }
 
-    addPostOnList(formValue: { type: string, title: string, imageUrl: string, content: string, id: number}) {
-      const post: PostListModel = {
-          ...formValue,
-          datePost: new Date(),
-      };
-      this.postlist.push(post);
+    
+  getPost() {
+    let $postRef = collection(this.firestore, "Post");
+    return collectionData($postRef, {idField: "id"}).pipe(
+      map(posts => {
+        return posts.map(post => {
+          Object.keys(post).filter(key => post[key] instanceof Timestamp)
+            .forEach(key => post[key] = post[key].toDate())
+          return post;
+        });
+      })
+    ) as Observable<PostListModel[]>;
   }
 }

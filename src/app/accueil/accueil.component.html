@@ -6,7 +6,7 @@
         <div class="ensembleCorps">
             <div class="newsletter">
                 <p>{{post.type}}</p>
-                <div class="post-image-container" [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')', 'background-position': 'center'}"></div>
+                <div class="post-image-container" [ngStyle]="{'background-image': 'url(' + post.image + ')', 'background-position': 'center'}"></div>
                 <p>{{post.title}}</p>
                 <p>{{post.datePost | date: 'longDate'}}</p>
             </div>

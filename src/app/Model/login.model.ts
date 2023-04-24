@@ -6,4 +6,4 @@ export class loginModel {
       this.identifiant = identifiant;
       this.password = password;
     }
-  }
+}

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostListModel } from '../Model/post-list.model';
+import { PostListService } from '../Service/post-list.service';
 
 @Component({
   selector: 'app-post',
@@ -8,12 +9,18 @@ import { PostListModel } from '../Model/post-list.model';
 })
 export class PostComponent implements OnInit {
 
-  @Input() act!: PostListModel[];
+  posts: PostListModel[] = []; 
+  @Input() act = this.posts;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    
+  constructor(private postListService: PostListService) {
+    this.postListService.getPost().subscribe((data) => {
+      this.posts = data;
+      data.forEach((element) => {
+        element.datePost.toDateString();
+      })
+    })
   }
 
+  ngOnInit(): void {
+  }
 }

@@ -9,12 +9,16 @@ import { PostListService } from '../Service/post-list.service';
 })
 export class ActualiteComponent implements OnInit{
 
-  actualite!: PostListModel[];
+  actualite: PostListModel[]=[];
   
-  constructor(private postlistService: PostListService) { }
+  constructor(private postlistService: PostListService) {
+    this.postlistService.getPost().subscribe((data) => {
+      this.actualite = data;
+    })
+   }
   
   ngOnInit(): void {
-    this.actualite = this.postlistService.getAllPostList();
+    
   }
 
 }

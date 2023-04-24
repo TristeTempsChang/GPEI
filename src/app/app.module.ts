@@ -20,6 +20,7 @@ import { ActualiteComponent } from './actualite/actualite.component';
 import { LoginComponent } from './login/login.component';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 import { loginService } from './Service/login.service';
+import { PostListService } from './Service/post-list.service';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -28,6 +29,7 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
+import { CardModule } from 'primeng/card';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -35,6 +37,10 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { MaternelleComponent } from './maternelle/maternelle.component';
+import { ElementaireComponent } from './elementaire/elementaire.component';
+import { CollegeComponent } from './college/college.component';
+import { LyceeComponent } from './lycee/lycee.component';
 
 
 @NgModule({
@@ -49,7 +55,11 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     ContactComponent,
     ActualiteComponent,
     LoginComponent,
-    AccueilAdminComponent
+    AccueilAdminComponent,
+    MaternelleComponent,
+    ElementaireComponent,
+    CollegeComponent,
+    LyceeComponent
   ],
   imports: [
     BrowserModule,
@@ -62,12 +72,13 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     FormsModule,
     ButtonModule,
     ChartModule,
+    CardModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule
   ],
-  providers: [loginService],
+  providers: [loginService, PostListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

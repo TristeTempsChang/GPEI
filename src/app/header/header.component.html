@@ -1,13 +1,14 @@
 <header>
     <span class="relieur_resp">
         <div class="header_resp">
-            <img id="logo2" [src]="imageUrl" alt="GPEI LOGO" routerLink=""/>
+            <img id="logo2" [src]="imageUrl" alt="GPEI LOGO" (click)="noneDropDownresp()" routerLink="" *ngIf="!authenticate"/>
+            <img id="logo2" [src]="imageUrl" alt="GPEI LOGO" (click)="noneDropDownresp()" routerLink="admin" *ngIf="authenticate"/>
             <button (click)="displayDropdownResp()" id="dropbtn">
                 <img id="logo3" [src]="iconUrl" alt="Hamburger_icon" />
             </button>
         </div>
         <div id="dropdown-content_resp" style="display: none;">
-            <span class="relieur2" id="menu1" (click)="displayDropMenuContent()">
+            <span class="relieur2" id="menu1" (click)="displayDropMenuContent()" *ngIf="!authenticate">
                 <span style="display: flex; justify-content: space-between;">
                     <a class="font2" style="font-size: 1.5rem;">DÉCOUVRIR</a>
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
@@ -18,7 +19,18 @@
                     <a href="#">Nos membres</a>
                 </div>
             </span>
-            <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()">
+            <span class="relieur2" id="menu1" (click)="displayDropMenuContent()" *ngIf="authenticate">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem;">GESTION</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content" style="display: none;">
+                    <a href="#">Gestion du carrousel</a>
+                    <a (click)="noneDropDownresp()" routerLink="addPost">Gestion des actualités</a>
+                    <a href="#">Gestion des pages de présentations</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()" *ngIf="!authenticate">
                 <span style="display: flex; justify-content: space-between;">
                     <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">INFORMATIONS</a>
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
@@ -26,11 +38,22 @@
                 <div id="dropdownresp-content2" style="display: none;">
                     <a routerLink="actualite">Actualités</a>
                     <a href="#">Documentation</a>
-                <a href="#">Lettre d'infos</a>
-                <a href="#">Revue utile</a>
+                    <a href="#">Lettre d'infos</a>
+                    <a href="#">Revue utile</a>
                 </div>
             </span>
-            <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()">
+            <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()" *ngIf="authenticate">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem;">DOCUMENTATION</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content2" style="display: none;">
+                    <a href="#">Gestion des documents disponible</a>
+                    <a href="#">Gestion des lettres d'infos</a>
+                    <a href="#">Gestion des revues</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()" *ngIf="!authenticate">
                 <span style="display: flex; justify-content: space-between;">
                     <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">ADHÉRER</a>
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
@@ -41,7 +64,17 @@
                     <a href="#">Link 3</a>
                 </div>
             </span>
-            <span class="relieur2" id="menu4" (click)="displayDropMenuContent4()">
+            <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()" *ngIf="authenticate">
+                <span style="display: flex; justify-content: space-between;">
+                    <a class="font2" style="font-size: 1.5rem;">ADHÉRENT</a>
+                    <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
+                </span>
+                <div id="dropdownresp-content3" style="display: none;">
+                    <a href="#">Liste des demandes</a>
+                    <a href="#">Envoi de mail</a>
+                </div>
+            </span>
+            <span class="relieur2" id="menu4" (click)="displayDropMenuContent4()" *ngIf="!authenticate">
                 <span style="display: flex; justify-content: space-between;">
                     <a class="font2" style="font-size: 1.5rem; margin-top: 2px;">CONTACT</a>
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
@@ -50,29 +83,34 @@
                     <a (click)="noneDropDownresp()" routerLink="contact">Nous contacter</a>
                 </div>
             </span>
-            <a href="#">MATERNELLE</a>
-            <a href="#">ÉLÉMENTAIRE</a>
-            <a href="#">COLLÈGE</a>
-            <a href="#">LYCÉE</a>
-            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" routerLink="login">
+            <a routerLink="maternelle" (click)="noneDropDownresp()" *ngIf="!authenticate">MATERNELLE</a>
+            <a routerLink="elementaire" (click)="noneDropDownresp()" *ngIf="!authenticate">ÉLÉMENTAIRE</a>
+            <a routerLink="college" (click)="noneDropDownresp()" *ngIf="!authenticate">COLLÈGE</a>
+            <a routerLink="lycee" (click)="noneDropDownresp()" *ngIf="!authenticate">LYCÉE</a>
+            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" routerLink="login" *ngIf="!authenticate">
+                <i class="pi pi-user" style="margin-right: 5px;"></i>
                 ADMINISTRATEUR
-              </a>
+            </a>
+            <a style="color: white; font-size: 1.3rem; text-align: center;" id="admin2" (click)="onLogout()" *ngIf="authenticate">
+                <i class="pi pi-sign-out" style="margin-right: 5px;"></i>
+                DÉCONNEXION
+            </a>
         </div>
     </span>
     <div class="header_top">
        <nav class="nav_top">
           <ul class="list">
             <li *ngIf="!authenticate">
-                <a class="lien" href="#">MATERNELLE</a>
+                <a class="lien" routerLink="maternelle">MATERNELLE</a>
             </li>
               <li *ngIf="!authenticate">
-                  <a class="lien" href="#">ÉLÉMENTAIRE</a>
+                  <a class="lien" routerLink="elementaire">ÉLÉMENTAIRE</a>
               </li>
               <li *ngIf="!authenticate">
-                  <a class="lien" href="#">COLLÈGE</a>
+                  <a class="lien" routerLink="college">COLLÈGE</a>
               </li>
               <li *ngIf="!authenticate">
-                  <a class="lien" href="#">LYCÉE</a>
+                  <a class="lien" routerLink="lycee">LYCÉE</a>
               </li>
           </ul>
       </nav>
@@ -80,10 +118,10 @@
         <i class="pi pi-user" style="margin-right: 5px;"></i>
         ADMINISTRATEUR
       </a>
-      <button id="admin2" style="border: none;" *ngIf="authenticate" (click)="onLogout()">
+      <a id="admin" style="color: white; cursor: pointer;" *ngIf="authenticate" (click)="onLogout()">
         <i class="pi pi-sign-out" style="margin-right: 5px;"></i>
         DÉCONNEXION
-      </button>
+      </a>
     </div>
     <span class="menu">
         <span *ngIf="!authenticate">
@@ -118,7 +156,7 @@
             </div>
         </span>
         <span class="relieur" *ngIf="authenticate">
-            <a class="font">DOCUMENTATIONS</a>
+            <a class="font">DOCUMENTATION</a>
             <div class="dropdown-content2">
                 <a href="#">Gestion des documents disponible</a>
                 <a href="#">Gestion des lettres d'infos</a>
