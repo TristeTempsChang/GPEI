@@ -16,7 +16,7 @@
                 <div id="dropdownresp-content" style="display: none;">
                     <a href="#">Qui sommes-nous ?</a>
                     <a href="#">Nos derniers communiqués</a>
-                    <a href="#">Nos membres</a>
+                    <a routerLink="membre">Nos membres</a>
                 </div>
             </span>
             <span class="relieur2" id="menu1" (click)="displayDropMenuContent()" *ngIf="authenticate">
@@ -98,7 +98,6 @@
         </div>
     </span>
     <div class="header_top">
-       <nav class="nav_top">
           <ul class="list">
             <li *ngIf="!authenticate">
                 <a class="lien" routerLink="maternelle">MATERNELLE</a>
@@ -113,11 +112,10 @@
                   <a class="lien" routerLink="lycee">LYCÉE</a>
               </li>
           </ul>
-      </nav>
-      <a class="lien" id="admin" routerLink="login" *ngIf="!authenticate">
-        <i class="pi pi-user" style="margin-right: 5px;"></i>
-        ADMINISTRATEUR
-      </a>
+          <a class="lien" id="admin" routerLink="login" *ngIf="!authenticate">
+            <i class="pi pi-user" style="margin-right: 5px;"></i>
+            ADMINISTRATEUR
+          </a>
       <a id="admin" style="color: white; cursor: pointer;" *ngIf="authenticate" (click)="onLogout()">
         <i class="pi pi-sign-out" style="margin-right: 5px;"></i>
         DÉCONNEXION
@@ -135,7 +133,7 @@
             <div class="dropdown-content">
                 <a href="#">Qui sommes-nous ?</a>
                 <a href="#">Nos derniers communiqués</a>
-                <a href="#">Nos membres</a>
+                <a routerLink="membre">Nos membres</a>
             </div>
         </span>
         <span class="relieur" *ngIf="authenticate">

@@ -6,6 +6,7 @@ import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Module component
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { CardModule } from 'primeng/card';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -41,6 +43,7 @@ import { MaternelleComponent } from './maternelle/maternelle.component';
 import { ElementaireComponent } from './elementaire/elementaire.component';
 import { CollegeComponent } from './college/college.component';
 import { LyceeComponent } from './lycee/lycee.component';
+import { MembresComponent } from './membres/membres.component';
 
 
 @NgModule({
@@ -59,10 +62,12 @@ import { LyceeComponent } from './lycee/lycee.component';
     MaternelleComponent,
     ElementaireComponent,
     CollegeComponent,
-    LyceeComponent
+    LyceeComponent,
+    MembresComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CarouselModule,
     ReactiveFormsModule,
@@ -73,6 +78,7 @@ import { LyceeComponent } from './lycee/lycee.component';
     ButtonModule,
     ChartModule,
     CardModule,
+    OrganizationChartModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

@@ -11,6 +11,7 @@ import { MaternelleComponent } from './maternelle/maternelle.component';
 import { CollegeComponent } from './college/college.component';
 import { ElementaireComponent } from './elementaire/elementaire.component';
 import { LyceeComponent } from './lycee/lycee.component';
+import { MembresComponent } from './membres/membres.component';
 
 const routes: Routes = [
   { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard] },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'maternelle', component: MaternelleComponent},
   { path: 'elementaire', component: ElementaireComponent},
   { path: 'college', component: CollegeComponent},
-  { path: 'lycee', component: LyceeComponent}
+  { path: 'lycee', component: LyceeComponent},
+  { path: 'membre', component: MembresComponent},
 ];
 
 @NgModule({

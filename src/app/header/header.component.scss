@@ -16,9 +16,9 @@ ul {
     border: 1px solid black;
     background-color: black;
     height: 40px;
-    width: 99.8%;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
  }
  
  .list {
@@ -26,7 +26,7 @@ ul {
  }
  
  li {
-    margin: 0 1rem 0;
+    margin: 0 1.2rem 0;
     font-family: "Montserrat",sans-serif;
     font-size: 0.95rem;
     line-height: 8px;
@@ -45,13 +45,14 @@ ul {
  }
  
  #admin {
+   border: 1px solid #e08e13;
     background-color: #e08e13;
     font-family: "Montserrat",sans-serif;
     font-size: 0.95rem;
     padding: 10px;
-    margin-right: -1px;
     margin-top: -1px;
-    height: 22px;
+    margin-right: -1px;
+    height: 40px;
  }
 
  #admin2 {
@@ -60,7 +61,6 @@ ul {
    font-size: 0.95rem;
    margin-right: -1px;
    color: white;
-   height: 28px;
    cursor: pointer;
 }
 

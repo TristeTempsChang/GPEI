@@ -1,0 +1,19 @@
+<div class="membrePage">
+    <div>
+        <h2 class="textmembrePage">Nos membres</h2>
+    </div>
+    <br />
+    <div class="card flex justify-content-center overflow-x-auto">
+        <p-organizationChart [value]="data">
+            <ng-template let-node pTemplate="person">
+                <div class="p-5 text-center">
+                    <img [src]="node.data.image" class="img" />
+                    <div class="font-bold">{{ node.data.name }}</div>
+                    <div>{{ node.data.title }}</div>
+                    <div>{{ node.data.title2 }}</div>
+                    <div>{{ node.data.title3 }}</div>
+                </div>
+            </ng-template>
+        </p-organizationChart>
+    </div>
+</div>

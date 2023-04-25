@@ -1,6 +1,5 @@
 :host ::ng-deep {
     .p-card.p-component {
-      box-shadow: lightgray 4px 4px 20px;
       border-radius: 10px;
       border: 1px solid lightgray;
       margin: 20px 60px;
@@ -11,6 +10,19 @@
   }
 
   img {
-    width: 360px;
     height: 270px;
+  }
+
+
+  @media screen and (max-width: 375px) {
+    :host ::ng-deep {
+        .p-card.p-component {
+          box-shadow: lightgray 4px 4px 20px;
+          border-radius: 10px;
+          border: 1px solid lightgray;
+          margin: 20px auto;
+          text-align: center;
+          display: inline-block;
+        }
+      }
   }
