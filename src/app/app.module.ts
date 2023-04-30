@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 //Module component
 import { AppComponent } from './app.component';
@@ -22,6 +23,11 @@ import { LoginComponent } from './login/login.component';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 import { loginService } from './Service/login.service';
 import { PostListService } from './Service/post-list.service';
+import { MaternelleComponent } from './maternelle/maternelle.component';
+import { ElementaireComponent } from './elementaire/elementaire.component';
+import { CollegeComponent } from './college/college.component';
+import { LyceeComponent } from './lycee/lycee.component';
+import { MembresComponent } from './membres/membres.component';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -32,6 +38,12 @@ import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { CardModule } from 'primeng/card';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogModule } from 'primeng/dialog';
+import { FileUploadModule } from 'primeng/fileupload';
+import { EditorModule } from 'primeng/editor';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -39,11 +51,8 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { MaternelleComponent } from './maternelle/maternelle.component';
-import { ElementaireComponent } from './elementaire/elementaire.component';
-import { CollegeComponent } from './college/college.component';
-import { LyceeComponent } from './lycee/lycee.component';
-import { MembresComponent } from './membres/membres.component';
+import { AddingFormComponent } from './add-post/adding-form/adding-form.component';
+import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
 
 
 @NgModule({
@@ -63,9 +72,12 @@ import { MembresComponent } from './membres/membres.component';
     ElementaireComponent,
     CollegeComponent,
     LyceeComponent,
-    MembresComponent
+    MembresComponent,
+    AddingFormComponent,
+    ModifyFormComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -79,6 +91,12 @@ import { MembresComponent } from './membres/membres.component';
     ChartModule,
     CardModule,
     OrganizationChartModule,
+    DataViewModule,
+    DropdownModule,
+    DynamicDialogModule,
+    DialogModule,
+    FileUploadModule,
+    EditorModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

@@ -1,0 +1,12 @@
+<div class="test">
+    <form [formGroup]="testPostForm">
+        <div class="card">
+            <p-editor formControlName="text"></p-editor>
+            <p-button (click)="testSubmit()" label="Ajouter"></p-button>
+        </div>
+    </form>
+        <div class="output">
+            <h1>Output</h1>
+            <p [innerHTML]="textContent"></p>
+        </div>
+</div>

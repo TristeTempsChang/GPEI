@@ -1,0 +1,42 @@
+.imageList {
+    width: 10rem;
+    height: 7rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px #00000008,0 0 2px #0000000f,0 2px 6px #0000001f
+}
+
+.card {
+    margin: 40px;
+    border: solid 1px #dee2e6;
+    border-radius: 10px;
+}
+
+.headerEnsemble {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ensembleBlocList {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+.ensembleBlocInfo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.emsembleTexte {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.ensembleBtn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}

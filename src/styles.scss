@@ -2,6 +2,9 @@
 @import "primeicons/primeicons.css";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import url(../node_modules//quill/dist/quill.snow.css);
+@import url(../node_modules//quill/dist/quill.core.css);
+
 body {
     margin: 0;
     font-family: "Montserrat",sans-serif;

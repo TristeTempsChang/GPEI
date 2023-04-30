@@ -19,9 +19,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.imageUrl = "http://portail-mennecy.net/_media/img/small/logo-gpei.png"
-    this.iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png";
-    this.plusIconUrl = "https://icons.veryicon.com/png/o/miscellaneous/linear-icon-27/plus-circle-12.png"
+    this.imageUrl = "../../assets/logo-gpei.png"
+    this.iconUrl = "../../assets/Hamburger.png";
+    this.plusIconUrl = "../../assets/circle.png"
   }
 
   displayDropdownResp() {

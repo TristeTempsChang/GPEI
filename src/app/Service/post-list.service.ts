@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PostListModel } from '../Model/post-list.model';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable, map } from 'rxjs';
 import { Timestamp } from 'firebase/firestore';
 
@@ -25,5 +25,14 @@ export class PostListService {
         });
       })
     ) as Observable<PostListModel[]>;
+  }
+
+  addPost(post: PostListModel) {
+    let $postRef = collection(this.firestore, "Post");
+    return addDoc($postRef, post);
+  }
+
+  modifyPost() {
+
   }
 }

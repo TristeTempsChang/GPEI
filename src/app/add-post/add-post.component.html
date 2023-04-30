@@ -1,11 +1,35 @@
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
-<p>On teste une page quoi</p>
+<div class="card">
+    <p-dataView #dv [value]="postAct" [rows]="5" [paginator]="true">
+        <ng-template pTemplate="header">
+            <div class="headerEnsemble">
+                <p-dropdown placeholder="Trier par catégorie"></p-dropdown>
+                <div>
+                    <button (click)="showDialogAdd()" style="background-color: #e08e13; border: 1px solid #e08e13;" pButton icon="pi pi-plus"></button>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template let-post pTemplate="listItem">
+            <div class="col-12">
+                <div class="ensembleBlocList">
+                    <div class="ensembleBlocInfo">
+                        <img class="imageList" [src]="post.image" [alt]="post.title" />
+                        <div class="emsembleTexte">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: black;">{{ post.title }}</div>
+                            <div>
+                                <span>
+                                    <i class="pi pi-tag" style="margin-right: 5px;"></i>
+                                    <span>{{ post.categorie }}</span>
+                                </span>
+                            </div>
+                            <span>{{ post.datePost | date: 'longDate'}}</span>
+                        </div>
+                    </div>
+                        <div class="ensembleBtn">
+                            <div style="font-size: 1rem; font-weight: 700;">Modifier</div>
+                            <button (click)="showDialogModify()" style="background-color: orange; border: 1px solid orange;" pButton icon="pi pi-pencil"></button>
+                        </div>
+                    </div>
+                </div>
+        </ng-template>
+    </p-dataView>
+</div>
