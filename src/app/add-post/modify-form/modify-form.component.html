@@ -1,12 +1,53 @@
-<div class="test">
-    <form [formGroup]="testPostForm">
-        <div class="card">
-            <p-editor formControlName="text"></p-editor>
-            <p-button (click)="testSubmit()" label="Ajouter"></p-button>
+<div class="form">
+    <form [formGroup]="modifyPostForm">
+        <div class="upEnsemble">
+            <br />   
+            <div class="form-group">
+                <label for="categorie" style="font-weight: bold; color: grey;">Catégorie :</label>
+                <br />
+                <br />
+                <p-dropdown formControlName="categorie" [options]="categorie" optionLabel="categorie" placeholder="Sélectionnez la catégorie"></p-dropdown>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="image" style="font-weight: bold; color: grey;">Image :</label>
+                <br />
+                <br />
+                <!--<img [src]="imgSrc" width="350px" height="250px">-->
+                <br />
+                <br />
+                <!--<p-fileUpload mode="basic" chooseLabel="Sélectionnez une image" name="image" accept="image/*" [maxFileSize]="1000000" (onSelect)="showPreview($event)"></p-fileUpload>-->
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="title" style="font-weight: bold; color: grey;">Titre :</label>
+                <br />
+                <br />
+                <input pInputText class="inputContact" name="title" formControlName="title">
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="type" style="font-weight: bold; color: grey;">Type :</label>
+                <br />
+                <br />
+                <input pInputText name="type" formControlName="type">
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="content" style="font-weight: bold; color: grey;">Contenu :</label>
+                <br />
+                <br />
+                <p-editor formControlName="content" [style]="{ height: '320px' }"></p-editor>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="footerBloc">
+            <p-button label="Ajouter"></p-button>
         </div>
     </form>
-        <div class="output">
-            <h1>Output</h1>
-            <p [innerHTML]="textContent"></p>
-        </div>
 </div>

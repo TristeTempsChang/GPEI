@@ -1,5 +1,5 @@
 <div style="text-align:center;">
-    <div *ngFor="let post of posts" class="container">
+    <div *ngFor="let post of posts | slice:first:first+rows" class="container">
         <div class="ensembleCorps">
             <div class="newsletter">
                 <p>{{post.type}}</p>
@@ -9,4 +9,5 @@
             </div>
         </div>
     </div>
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="total"></p-paginator>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PostListModel } from '../Model/post-list.model';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc } from '@angular/fire/firestore';
 import { Observable, map } from 'rxjs';
 import { Timestamp } from 'firebase/firestore';
 
@@ -34,5 +34,10 @@ export class PostListService {
 
   modifyPost() {
 
+  }
+
+  deletePost(id: string) {
+    let $postRef = doc(this.firestore, "Post/" + id);
+    return deleteDoc($postRef);
   }
 }

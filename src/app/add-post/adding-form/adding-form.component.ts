@@ -52,7 +52,6 @@ export class AddingFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.addingPostForm.controls['categorie'].value.categorie);
     this.addingPostForm.patchValue({
       image: this.url,
       categorie: this.addingPostForm.controls['categorie'].value.categorie

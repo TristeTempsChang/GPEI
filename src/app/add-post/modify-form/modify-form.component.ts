@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { PostListService } from 'src/app/Service/post-list.service';
+
+interface Categorie {
+  categorie: string;
+}
 
 @Component({
   selector: 'app-modify-form',
@@ -7,19 +14,30 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./modify-form.component.scss']
 })
 export class ModifyFormComponent implements OnInit {
-  testPostForm! : FormGroup;
-  textContent!: string;
+  modifyPostForm! : FormGroup;
+  categorie!: Categorie[];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+              private postListService: PostListService,
+              public ref: DynamicDialogRef,
+              private firestorage: AngularFireStorage) {}
 
   ngOnInit(): void {
-    this.testPostForm = this.formBuilder.group({
-      text: new FormControl(),
-    })
-  }
+    this.categorie = [
+      {categorie: 'Maternelle'},
+      {categorie: 'Elementaire'},
+      {categorie: 'Collège'},
+      {categorie: 'Lycée'},
+      {categorie: 'Toutes catégories'}
+    ]
 
-  testSubmit() {
-    this.textContent = this.testPostForm.get('text')?.value;
-    console.log(this.testPostForm.get('text')?.value)
+    this.modifyPostForm = this.formBuilder.group({
+      categorie: new FormControl(),
+      image: new FormControl(''),
+      title: new FormControl(''),
+      type: new FormControl(''),
+      content: new FormControl(''),
+      datePost: new Date()
+    })
   }
 }

@@ -44,6 +44,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { FileUploadModule } from 'primeng/fileupload';
 import { EditorModule } from 'primeng/editor';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { PaginatorModule } from 'primeng/paginator';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -97,6 +99,8 @@ import { ModifyFormComponent } from './add-post/modify-form/modify-form.componen
     DialogModule,
     FileUploadModule,
     EditorModule,
+    ConfirmDialogModule,
+    PaginatorModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

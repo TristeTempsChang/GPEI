@@ -24,12 +24,20 @@
                             <span>{{ post.datePost | date: 'longDate'}}</span>
                         </div>
                     </div>
-                        <div class="ensembleBtn">
-                            <div style="font-size: 1rem; font-weight: 700;">Modifier</div>
-                            <button (click)="showDialogModify()" style="background-color: orange; border: 1px solid orange;" pButton icon="pi pi-pencil"></button>
+                        <div class="ensembleFooter">
+                            <div class="ensembleBtn">
+                                <div style="font-size: 1rem; font-weight: 700;">Modifier</div>
+                                <button (click)="showDialogModify()" style="background-color: orange; border: 1px solid orange;" pButton icon="pi pi-pencil"></button>
+                            </div>
+                            <div class="ensembleBtn">
+                                <div style="font-size: 1rem; font-weight: 700;">Supprimer</div>
+                                <button (click)="deleteDialog(post.id)" style="background-color: red; border: 1px solid red;" pButton icon="pi pi-trash"></button>
+                            </div>
                         </div>
                     </div>
                 </div>
         </ng-template>
     </p-dataView>
 </div>
+
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
