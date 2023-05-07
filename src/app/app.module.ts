@@ -28,6 +28,9 @@ import { ElementaireComponent } from './elementaire/elementaire.component';
 import { CollegeComponent } from './college/college.component';
 import { LyceeComponent } from './lycee/lycee.component';
 import { MembresComponent } from './membres/membres.component';
+import { AddingFormComponent } from './add-post/adding-form/adding-form.component';
+import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -46,6 +49,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { EditorModule } from 'primeng/editor';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PaginatorModule } from 'primeng/paginator';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -53,8 +57,6 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AddingFormComponent } from './add-post/adding-form/adding-form.component';
-import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { ModifyFormComponent } from './add-post/modify-form/modify-form.componen
     LyceeComponent,
     MembresComponent,
     AddingFormComponent,
-    ModifyFormComponent
+    ModifyFormComponent,
+    SinglePostComponent
   ],
   imports: [
     HttpClientModule,
@@ -101,6 +104,7 @@ import { ModifyFormComponent } from './add-post/modify-form/modify-form.componen
     EditorModule,
     ConfirmDialogModule,
     PaginatorModule,
+    ProgressSpinnerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

@@ -15,7 +15,12 @@ export class AppComponent {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.hideHeaderFooter = event.url === '/login';
+        this.resetScrollPosition();
       }
     });
+  }
+
+  resetScrollPosition() {
+    window.scrollTo(0, 0);
   }
 }

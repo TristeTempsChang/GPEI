@@ -3,21 +3,13 @@
         <div class="upEnsemble">
             <br />   
             <div class="form-group">
-                <label for="categorie" style="font-weight: bold; color: grey;">Catégorie :</label>
-                <br />
-                <br />
-                <p-dropdown formControlName="categorie" [options]="categorie" optionLabel="categorie" placeholder="Sélectionnez la catégorie"></p-dropdown>
-            </div>
-            <br />
-            <br />
-            <div class="form-group">
                 <label for="image" style="font-weight: bold; color: grey;">Image :</label>
                 <br />
                 <br />
-                <!--<img [src]="imgSrc" width="350px" height="250px">-->
+                <img [src]="image" width="350px" height="250px">
                 <br />
                 <br />
-                <!--<p-fileUpload mode="basic" chooseLabel="Sélectionnez une image" name="image" accept="image/*" [maxFileSize]="1000000" (onSelect)="showPreview($event)"></p-fileUpload>-->
+                <p-fileUpload mode="basic" chooseLabel="Sélectionnez une image" name="image" accept="image/*" [maxFileSize]="1000000000000000000000" (onSelect)="showPreview($event)"></p-fileUpload>
             </div>
             <br />
             <br />
@@ -25,7 +17,7 @@
                 <label for="title" style="font-weight: bold; color: grey;">Titre :</label>
                 <br />
                 <br />
-                <input pInputText class="inputContact" name="title" formControlName="title">
+                <input pInputText class="inputContact" [(ngModel)]="title" name="title" formControlName="title">
             </div>
             <br />
             <br />
@@ -33,7 +25,7 @@
                 <label for="type" style="font-weight: bold; color: grey;">Type :</label>
                 <br />
                 <br />
-                <input pInputText name="type" formControlName="type">
+                <input pInputText name="type" [(ngModel)]="type" formControlName="type">
             </div>
             <br />
             <br />
@@ -41,13 +33,18 @@
                 <label for="content" style="font-weight: bold; color: grey;">Contenu :</label>
                 <br />
                 <br />
-                <p-editor formControlName="content" [style]="{ height: '320px' }"></p-editor>
+                <p-editor formControlName="content" [(ngModel)]="content" [style]="{ height: '320px' }"></p-editor>
             </div>
         </div>
         <br />
         <br />
         <div class="footerBloc">
-            <p-button label="Ajouter"></p-button>
+            <p-button (click)="onSubmit()" label="Ajouter"></p-button>
+            <p-dialog [(visible)]="visible" [baseZIndex]="90" [modal]="true" [style]="{ width: '50vw' }" [showHeader]="false" [style]="{'width': '100%', 'height': '100%', 'max-width': '100%', 'max-height': '100%', 'border': 'none', 'background': 'transparent'}" [contentStyle]="{ 'background-color': 'transparent'}">
+                <div class="progress-spinner-container">
+                    <p-progressSpinner></p-progressSpinner>
+                </div>
+            </p-dialog>
         </div>
     </form>
 </div>

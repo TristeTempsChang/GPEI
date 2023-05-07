@@ -1,0 +1,8 @@
+<div class="container">
+    <p style="color: orange;">{{ type }}</p>
+    <div class="post-image-container" [ngStyle]="{'background-image': 'url(' + image + ')', 'background-position': 'center'}"></div>
+    <p style="font-weight: bold; font-size: 2.2rem; color: orange;">{{ title }}</p>
+    <div class="texteEnsemble">
+        <div class="styleTexte" [innerHTML]="content" style="font-size: 0.9rem; max-width:100%; height:auto;"></div>
+    </div>
+</div>

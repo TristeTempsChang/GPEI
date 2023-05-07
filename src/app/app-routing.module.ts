@@ -12,11 +12,10 @@ import { CollegeComponent } from './college/college.component';
 import { ElementaireComponent } from './elementaire/elementaire.component';
 import { LyceeComponent } from './lycee/lycee.component';
 import { MembresComponent } from './membres/membres.component';
-import { AddingFormComponent } from './add-post/adding-form/adding-form.component';
-import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [
-  { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard]},
+  { path: 'addPost', component: AddPostComponent, /*canActivate: [AuthGuard]}*/},
   { path: '', component: AccueilComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'actualite', component: ActualiteComponent},
@@ -27,7 +26,7 @@ const routes: Routes = [
   { path: 'college', component: CollegeComponent},
   { path: 'lycee', component: LyceeComponent},
   { path: 'membre', component: MembresComponent},
-  { path: 'test', component: ModifyFormComponent}
+  { path: 'actualite/:id', component: SinglePostComponent}
 ];
 
 @NgModule({

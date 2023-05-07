@@ -1,14 +1,21 @@
-.test {
-    display: flex;
-    margin: 50px;
-    align-items: center;
-    justify-content: space-around;
+.form {
+    border-top: solid 1px #dee2e6;
+    text-align: center;
 }
 
-.output {
-    background-color: lightgray;
+form {
+    margin: 10px;
+    display: inline-block;
 }
 
-.card {
-    display: block;
+.upEnsemble {
+    text-align: start;
+}
+
+.progress-spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }

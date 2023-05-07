@@ -2,8 +2,9 @@
     <p-dataView #dv [value]="postAct" [rows]="5" [paginator]="true">
         <ng-template pTemplate="header">
             <div class="headerEnsemble">
-                <p-dropdown placeholder="Trier par catégorie"></p-dropdown>
-                <div>
+                <p-dropdown [options]="categorie" optionLabel="categorie" placeholder="Trier par catégorie" (onChange)="onSortChange($event)"></p-dropdown>
+                <div class="ensembleBtnHeader">
+                    <button (click)="reset()" pButton style="background-color: black; border: 1px solid black;" icon="pi pi-undo"></button>
                     <button (click)="showDialogAdd()" style="background-color: #e08e13; border: 1px solid #e08e13;" pButton icon="pi pi-plus"></button>
                 </div>
             </div>
@@ -27,11 +28,11 @@
                         <div class="ensembleFooter">
                             <div class="ensembleBtn">
                                 <div style="font-size: 1rem; font-weight: 700;">Modifier</div>
-                                <button (click)="showDialogModify()" style="background-color: orange; border: 1px solid orange;" pButton icon="pi pi-pencil"></button>
+                                <button (click)="showDialogModify(post.id)" style="background-color: orange; border: 1px solid orange;" pButton icon="pi pi-pencil"></button>
                             </div>
                             <div class="ensembleBtn">
                                 <div style="font-size: 1rem; font-weight: 700;">Supprimer</div>
-                                <button (click)="deleteDialog(post.id)" style="background-color: red; border: 1px solid red;" pButton icon="pi pi-trash"></button>
+                                <button (click)="deleteDialog(post.id, post.image)" style="background-color: red; border: 1px solid red;" pButton icon="pi pi-trash"></button>
                             </div>
                         </div>
                     </div>

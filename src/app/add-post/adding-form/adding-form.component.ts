@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { finalize } from 'rxjs';
 import { PostListService } from 'src/app/Service/post-list.service';
 
 interface Categorie {
@@ -24,6 +25,8 @@ export class AddingFormComponent implements OnInit {
   selectedImage: any = null;
 
   url!: string;
+
+  visible!: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private postListService: PostListService,
@@ -52,39 +55,42 @@ export class AddingFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.addingPostForm.patchValue({
-      image: this.url,
-      categorie: this.addingPostForm.controls['categorie'].value.categorie
-    });
-    this.postListService.addPost(this.addingPostForm.value)
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.error(err);  
-    });
-    this.ref.close();
+    this.visible = true;
+    var path = `post/${this.selectedImage.name}`;
+    const fileRef = this.firestorage.ref(path);
+    this.firestorage.upload(path, this.selectedImage).snapshotChanges().pipe(
+      finalize(() => {
+        fileRef.getDownloadURL().subscribe((url) => {
+          this.addingPostForm.patchValue({
+            image: url.toString(),
+            categorie: this.addingPostForm.controls['categorie'].value.categorie
+          });
+          console.log(this.addingPostForm.value);
+          this.visible = false;
+          this.postListService.addPost(this.addingPostForm.value)
+            .then((data) => {
+              console.log("Post ajouté: ", data);
+            })
+            .catch((err) => {
+              console.error(err);  
+            });
+          this.ref.close();
+        });
+      })
+    ).subscribe();
   }
+
 
   async showPreview(event: any){
     if(event.files && event.files.length > 0) {
       const reader = new FileReader();
-      reader.onload = (e:any) => {
+      reader.onload = (e:any) => 
         this.imgSrc = e.target.result;
         this.selectedImage = event.files[0];
-      };
-      reader.readAsDataURL(event.files[0]);
+        reader.readAsDataURL(event.files[0]);
     } else {
       this.imgSrc = "../../assets/default-placeholder.png";
       this.selectedImage = null;
-    }
-
-    const file = event.files[0]
-    if(file) {
-      const path = `post/${file.name}`
-      const uploadTask = await this.firestorage.upload(path, file)
-      const url = await uploadTask.ref.getDownloadURL() 
-      this.url = url;
     }
   }
 

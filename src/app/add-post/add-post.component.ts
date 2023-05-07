@@ -5,6 +5,12 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AddingFormComponent } from './adding-form/adding-form.component';
 import { ConfirmationService} from 'primeng/api';
 import { ModifyFormComponent } from './modify-form/modify-form.component';
+import { getStorage, ref, deleteObject } from "firebase/storage";
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
+interface Categorie {
+  categorie: string;
+}
 
 @Component({
   selector: 'app-add-post',
@@ -15,11 +21,17 @@ import { ModifyFormComponent } from './modify-form/modify-form.component';
 export class AddPostComponent implements OnInit {
 
   postAct: PostListModel[]=[];
+  categorie!: Categorie[];
   ref!: DynamicDialogRef;
+  IdUpdate: any;
+  image: any;
+  imageName: any;
+  filter: any;
 
   constructor(private postlistService: PostListService,
               private dialogService: DialogService,
-              private confirmationService: ConfirmationService) {
+              private confirmationService: ConfirmationService,
+              private firestorage: AngularFireStorage) {
 
       this.postlistService.getPost().subscribe((data) => {
       this.postAct = data;
@@ -28,7 +40,36 @@ export class AddPostComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.categorie = [
+      {categorie: 'Maternelle'},
+      {categorie: 'Elementaire'},
+      {categorie: 'Collège'},
+      {categorie: 'Lycée'},
+      {categorie: 'Toutes catégories'}
+    ]
+
     
+  }
+
+  onSortChange(event: any) {
+    if(event.value.categorie){
+      this.postlistService.getPost().subscribe((data) => {
+        this.postAct = data;
+        this.postAct = this.postAct.filter(post => post.categorie === event.value.categorie);
+      });
+    } else {
+      this.postlistService.getPost().subscribe((data) => {
+        this.postAct = data;
+        this.postAct.sort((a, b) => new Date(b.datePost).getTime() - new Date(a.datePost).getTime());
+      });
+    }
+  }
+
+  reset() {
+    this.postlistService.getPost().subscribe((data) => {
+      this.postAct = data;
+      this.postAct.sort((a, b) => new Date(b.datePost).getTime() - new Date(a.datePost).getTime());
+    });
   }
 
   showDialogAdd() {
@@ -42,7 +83,7 @@ export class AddPostComponent implements OnInit {
   }
 
 
-  showDialogModify() {
+  showDialogModify(id: string) {
     this.ref = this.dialogService.open(ModifyFormComponent, {
       header: 'Modifier le post',
       width: '70%',
@@ -50,9 +91,18 @@ export class AddPostComponent implements OnInit {
       baseZIndex: 10000,
       maximizable: true
     });
+    this.IdUpdate = id;
   }
 
-    deleteDialog(postId: string) {
+    deleteDialog(postId: string, image: string) {
+      this.image = image;
+      const reff = this.firestorage.refFromURL(this.image);
+      return reff.getMetadata().toPromise().then(metaData => {
+        this.imageName = metaData.name.toString();
+
+      const storage = getStorage();
+      const fileRef = ref(storage, `post/${this.imageName}`);
+
       this.confirmationService.confirm({
         message: 'Êtes-vous sûr de vouloir supprimer ce post ?',
         header: 'Confirmation de suppression',
@@ -61,16 +111,23 @@ export class AddPostComponent implements OnInit {
         rejectLabel: 'Non',
         accept: () => {
             this.postlistService.deletePost(postId)
-            .then(() => {
+            .then((data) => {
 
             })
-            .catch(() => {
-
+            .catch((err) => {
+              console.error(err)
             })
+
+            deleteObject(fileRef).then(() => {
+
+            }).catch((error) => {
+              console.error(error);
+            });
         },
         reject: () => {
-          console.log('fuck');
+          
         }
+      })
     });
   }
 
