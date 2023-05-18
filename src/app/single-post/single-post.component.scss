@@ -10,6 +10,7 @@ img {
     box-sizing: border-box;
     padding: 10px 30px;
     box-shadow: lightgray 4px 4px 20px;
+    background-color: white;
 }
 
 .post-image-container {
@@ -21,3 +22,9 @@ img {
 .texteEnsemble {
     text-align: left;
 }
+
+.custom-body {
+    background: linear-gradient(90deg, #ffefc1 0%, #ffffff 100%);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
