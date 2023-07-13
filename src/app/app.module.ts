@@ -31,6 +31,7 @@ import { MembresComponent } from './membres/membres.component';
 import { AddingFormComponent } from './add-post/adding-form/adding-form.component';
 import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { WhyAdhererComponent } from './why-adherer/why-adherer.component';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -57,6 +58,8 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.component';
+import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
 
 
 @NgModule({
@@ -79,7 +82,10 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     MembresComponent,
     AddingFormComponent,
     ModifyFormComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    WhyAdhererComponent,
+    QuiSommesNousComponent,
+    JoinGPEIComponent
   ],
   imports: [
     HttpClientModule,

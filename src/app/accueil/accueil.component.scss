@@ -91,6 +91,10 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
 
   .div4 { 
@@ -99,6 +103,21 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .div3Texte {
+    display: block;
+    margin: 0px 35px 0px;
+  }
+
+  .div4Texte {
+    display: block;
+    margin: 0px 15px 0px;
   }
 
 .inscriptionNewsletter {
@@ -129,4 +148,16 @@
   padding: 10px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.titre_bloc4 {
+  font-size: 2.875rem;
+  font-weight: 700;
+}
+
+.lienBloc3 {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

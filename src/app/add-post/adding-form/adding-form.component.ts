@@ -65,7 +65,6 @@ export class AddingFormComponent implements OnInit {
             image: url.toString(),
             categorie: this.addingPostForm.controls['categorie'].value.categorie
           });
-          console.log(this.addingPostForm.value);
           this.visible = false;
           this.postListService.addPost(this.addingPostForm.value)
             .then((data) => {

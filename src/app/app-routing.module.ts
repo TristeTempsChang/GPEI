@@ -13,9 +13,12 @@ import { ElementaireComponent } from './elementaire/elementaire.component';
 import { LyceeComponent } from './lycee/lycee.component';
 import { MembresComponent } from './membres/membres.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { WhyAdhererComponent } from './why-adherer/why-adherer.component';
+import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.component';
+import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
 
 const routes: Routes = [
-  { path: 'addPost', component: AddPostComponent, /*canActivate: [AuthGuard]}*/},
+  { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard]},
   { path: '', component: AccueilComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'actualite', component: ActualiteComponent},
@@ -26,7 +29,10 @@ const routes: Routes = [
   { path: 'college', component: CollegeComponent},
   { path: 'lycee', component: LyceeComponent},
   { path: 'membre', component: MembresComponent},
-  { path: 'actualite/:id', component: SinglePostComponent}
+  { path: 'actualite/:id', component: SinglePostComponent},
+  { path: 'pourquoi-adherer?', component: WhyAdhererComponent},
+  { path: 'qui-sommes-nous-?', component: QuiSommesNousComponent},
+  { path: 'nous-rejoindre', component: JoinGPEIComponent}
 ];
 
 @NgModule({

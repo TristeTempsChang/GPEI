@@ -10,12 +10,11 @@
         <div id="dropdown-content_resp" style="display: none;">
             <span class="relieur2" id="menu1" (click)="displayDropMenuContent()" *ngIf="!authenticate">
                 <span style="display: flex; justify-content: space-between;">
-                    <a class="font2" style="font-size: 1.5rem;">DÉCOUVRIR</a>
+                    <a class="font2" style="font-size: 1.5rem;">LA GPEI</a>
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content" style="display: none;">
-                    <a href="#">Qui sommes-nous ?</a>
-                    <a href="#">Nos derniers communiqués</a>
+                    <a routerLink="qui-sommes-nous-?">Qui sommes-nous ?</a>
                     <a (click)="noneDropDownresp()" routerLink="membre">Nos membres</a>
                 </div>
             </span>
@@ -27,7 +26,6 @@
                 <div id="dropdownresp-content" style="display: none;">
                     <a href="#">Gestion du carrousel</a>
                     <a (click)="noneDropDownresp()" routerLink="addPost">Gestion des actualités</a>
-                    <a href="#">Gestion des pages de présentations</a>
                 </div>
             </span>
             <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()" *ngIf="!authenticate">
@@ -59,9 +57,8 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content3" style="display: none;">
-                    <a href="#">Pourquoi adhérer ?</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a routerLink="pourquoi-adherer?">Pourquoi adhérer ?</a>
+                    <a routerLink="nous-rejoindre">Rejoindre la GPEI</a>
                 </div>
             </span>
             <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()" *ngIf="authenticate">
@@ -129,10 +126,9 @@
         <img id="logo" [src]="imageUrl" alt="GPEI LOGO" routerLink="admin"/>
         </span>
         <span class="relieur" *ngIf="!authenticate">
-            <a class="font">DÉCOUVRIR</a>
+            <a class="font">LA GPEI</a>
             <div class="dropdown-content">
-                <a href="#">Qui sommes-nous ?</a>
-                <a href="#">Nos derniers communiqués</a>
+                <a routerLink="qui-sommes-nous-?">Qui sommes-nous ?</a>
                 <a routerLink="membre">Nos membres</a>
             </div>
         </span>
@@ -141,7 +137,6 @@
             <div class="dropdown-content">
                 <a href="#">Gestion du carrousel</a>
                 <a routerLink="addPost">Gestion des actualités</a>
-                <a href="#">Gestion des pages de présentations</a>
             </div>
         </span>
         <span class="relieur" *ngIf="!authenticate">
@@ -164,9 +159,8 @@
         <span class="relieur" *ngIf="!authenticate">
             <a class="font">ADHÉRER</a>
             <div class="dropdown-content3">
-                <a href="#">Pourquoi adhérer ?</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a routerLink="pourquoi-adherer?">Pourquoi adhérer ?</a>
+                <a routerLink="nous-rejoindre">Rejoindre la GPEI</a>
             </div>
         </span>
         <span class="relieur" *ngIf="authenticate">

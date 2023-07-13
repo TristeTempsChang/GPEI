@@ -23,8 +23,6 @@ export class SinglePostComponent implements OnInit {
       this.title = data.title;
       this.image = data.image;
       this.content = data.content;
-      console.log(this.content)
-      console.log(this.content.replaceAll("<p><br></p>", ""))
       this.type = data.type;
     })
   }

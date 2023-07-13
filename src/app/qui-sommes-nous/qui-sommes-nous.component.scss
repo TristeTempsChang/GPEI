@@ -1,0 +1,63 @@
+.textQuiSommesNousPage {
+    color: #e08e13;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 14px;
+    background: linear-gradient(to right, #e08e13 120%, transparent 50%) no-repeat center bottom/5% 4px;
+}
+
+.quiSommesnousPage {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.unaapeBloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#schoolHelp {
+    height: auto;
+    width: 250px;
+    border-radius: 7px;
+}
+
+#politic {
+    height: auto;
+    width: 175px;
+    border-radius: 7px;
+}
+
+#inform {
+    height: auto;
+    width: 250px;
+    border-radius: 7px;
+}
+
+#neutrality {
+    height: auto;
+    width: 250px;
+    border-radius: 7px;
+}
+
+#election {
+    height: auto;
+    width: 250px;
+    border-radius: 7px;
+}
+
+.missions {
+    display: flex;
+    justify-content: space-around;
+    background-image: url("../../assets/backgroundUnaape.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blocUnaape {
+    text-align: center;
+    margin: 0px 15px 0px;
+}
