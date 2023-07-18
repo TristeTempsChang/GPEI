@@ -8,10 +8,14 @@ import { ecoleModel } from '../Model/ecole.model';
 })
 export class LyceeComponent implements OnInit {
 
-  lycee!: ecoleModel[];
+  visible: boolean = false;
 
   ngOnInit(): void {
     
+  }
+
+  showDialog(){
+    this.visible = true;
   }
 
 }

@@ -35,7 +35,7 @@
                 </span>
                 <div id="dropdownresp-content2" style="display: none;">
                     <a (click)="noneDropDownresp()" routerLink="actualite">Actualités</a>
-                    <a href="#">Documentation</a>
+                    <a (click)="noneDropDownresp()" routerLink="document">Documentation</a>
                     <a href="#">Lettre d'infos</a>
                     <a href="#">Revue utile</a>
                 </div>
@@ -46,7 +46,7 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content2" style="display: none;">
-                    <a href="#">Gestion des documents disponible</a>
+                    <a (click)="noneDropDownresp()" routerLink="addDoc">Gestion des documents disponible</a>
                     <a href="#">Gestion des lettres d'infos</a>
                     <a href="#">Gestion des revues</a>
                 </div>
@@ -143,7 +143,7 @@
             <a class="font">INFORMATIONS</a>
             <div class="dropdown-content2">
                 <a routerLink="actualite" >Actualités</a>
-                <a href="#">Documentation</a>
+                <a routerLink="document">Documentation</a>
                 <a href="#">Lettre d'infos</a>
                 <a href="#">Revue utile</a>
             </div>
@@ -151,7 +151,7 @@
         <span class="relieur" *ngIf="authenticate">
             <a class="font">DOCUMENTATION</a>
             <div class="dropdown-content2">
-                <a href="#">Gestion des documents disponible</a>
+                <a routerLink="addDoc">Gestion des documents disponible</a>
                 <a href="#">Gestion des lettres d'infos</a>
                 <a href="#">Gestion des revues</a>
             </div>

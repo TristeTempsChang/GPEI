@@ -6,8 +6,31 @@
         <p style="font-size: 1.2rem;">
             {{ecole.name}}
         </p>
-        <p style="color: #e08e13; font-size: 1rem;">
+        <p (click)="showDialog(ecole.id)" style="color: #e08e13; font-size: 1rem; cursor: pointer;">
             Voir plus +
         </p>
     </p-card>
 </div>
+<p-dialog *ngFor="let ecole of dialog" header="{{ecole.title}} / {{ecole.name}}" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div>
+        <div>
+            <p class="m-0">
+                Direction : {{ecole.director}}
+            </p>
+            <p class="m-0">
+                Adresse : {{ecole.address}}
+            </p>
+            <p class="m-0">
+                Tel : {{ecole.tel}}
+            </p>
+            <p class="m-0">
+                Email : {{ecole.email}}
+            </p>
+        </div>
+        <br />
+        <div>
+            <h4>Liste des élus de l'établissements</h4>
+            <p [innerHTML]="ecole.elus"></p>
+        </div>
+    </div>
+</p-dialog>

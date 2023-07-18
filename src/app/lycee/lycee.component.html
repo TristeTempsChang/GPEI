@@ -6,8 +6,33 @@
         <p style="font-size: 1.2rem;">
             Lycée polyvalent Marie Laurencin
         </p>
-        <p style="color: #e08e13; font-size: 1rem;">
+        <p (click)="showDialog()" style="color: #e08e13; font-size: 1rem; cursor: pointer;">
             Voir plus +
         </p>
     </p-card>
 </div>
+<p-dialog header="Lycée polyvalent / Marie Laurencin" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div>
+        <div>
+            <p class="m-0">
+                Direction : BACON Marie-Hélène
+            </p>
+            <p class="m-0">
+                Adresse : 11-12 rue Paul Cézanne 91540 Mennecy
+            </p>
+            <p class="m-0">
+                Tel : 01 69 90 05 78
+            </p>
+            <p class="m-0">
+                Email : ce.0911962n@ac-versailles.fr
+            </p>
+        </div>
+        <br />
+        <div>
+            <h4>Liste des élus de l'établissements</h4>
+            <ul>
+                <li>Mme BUQUET Céline | Responsable niveau seconde</li>
+            </ul>
+        </div>
+    </div>
+</p-dialog>

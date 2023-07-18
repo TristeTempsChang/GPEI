@@ -16,6 +16,8 @@ import { SinglePostComponent } from './single-post/single-post.component';
 import { WhyAdhererComponent } from './why-adherer/why-adherer.component';
 import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.component';
 import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
+import { DocumentComponent } from './document/document.component';
+import { AddDocComponent } from './add-doc/add-doc.component';
 
 const routes: Routes = [
   { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard]},
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'actualite/:id', component: SinglePostComponent},
   { path: 'pourquoi-adherer?', component: WhyAdhererComponent},
   { path: 'qui-sommes-nous-?', component: QuiSommesNousComponent},
-  { path: 'nous-rejoindre', component: JoinGPEIComponent}
+  { path: 'nous-rejoindre', component: JoinGPEIComponent},
+  { path: 'document', component: DocumentComponent},
+  { path: 'addDoc', component: AddDocComponent, /*canActivate: [AuthGuard]*/},
 ];
 
 @NgModule({

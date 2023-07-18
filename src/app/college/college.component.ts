@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollegeComponent implements OnInit {
 
+  visible: boolean = false;
+
   ngOnInit(): void {
     
+  }
+
+  showDialog(){
+    this.visible = true;
   }
 
 }

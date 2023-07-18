@@ -1,3 +1,7 @@
+.ensembleTextewhy {
+  display: flex;
+}
+
 .textwhy {
     color: #e08e13;
     text-align: center;
@@ -12,3 +16,54 @@
     margin-left: 100px;
     margin-right: 100px;
 }
+
+.elemMat {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(146, 146, 146, 0.7) 100%), url('../../assets/elemmat.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.college{
+    background: linear-gradient(90deg, rgba(224, 142, 19, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/college2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.lycee{
+    background: linear-gradient(90deg, rgba(59, 59, 172, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/lycee2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.titleWhy {
+    font-size: 2.875rem;
+}
+
+.btnAdherer {
+    border: none;
+    color: white;
+    padding: 10px 10px 10px;
+    font-size: 1.275rem;
+    margin-top: 30px;
+    background-color: #e08e13;
+    border-radius: 7px;
+    cursor: pointer;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 400ms;
+    &:hover {
+          transform: scale(1.09);
+    }
+  }

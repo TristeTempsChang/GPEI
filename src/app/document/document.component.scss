@@ -1,0 +1,44 @@
+.imgDoc {
+    height: 12rem;
+    width: auto;
+}
+
+.allDoc {
+    display: inline-block;
+    align-items: center;
+}
+
+.dooc{
+    margin: 25px;
+}
+
+.ensembleDoc {
+    padding: 0px 50px 0px;
+}
+
+.textDocPage {
+    color: #e08e13;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 14px;
+    background: linear-gradient(to right, #e08e13 120%, transparent 50%) no-repeat center bottom/5% 4px;
+}
+
+.docPage {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.blocDoc {
+    background-color: #e08e13;
+    color: white;
+    padding: 2px;
+    position: relative;
+    left: 75px;
+    bottom: 40px;
+}
+
+.linkDoc{
+    color: white;
+    text-decoration: none;
+}

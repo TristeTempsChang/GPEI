@@ -32,6 +32,10 @@ import { AddingFormComponent } from './add-post/adding-form/adding-form.componen
 import { ModifyFormComponent } from './add-post/modify-form/modify-form.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { WhyAdhererComponent } from './why-adherer/why-adherer.component';
+import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.component';
+import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
+import { DocumentComponent } from './document/document.component';
+import { AddDocComponent } from './add-doc/add-doc.component';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -51,6 +55,8 @@ import { EditorModule } from 'primeng/editor';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -58,8 +64,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.component';
-import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
+
 
 
 @NgModule({
@@ -85,7 +90,9 @@ import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
     SinglePostComponent,
     WhyAdhererComponent,
     QuiSommesNousComponent,
-    JoinGPEIComponent
+    JoinGPEIComponent,
+    DocumentComponent,
+    AddDocComponent
   ],
   imports: [
     HttpClientModule,
@@ -111,6 +118,8 @@ import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
     ConfirmDialogModule,
     PaginatorModule,
     ProgressSpinnerModule,
+    TableModule,
+    ToolbarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

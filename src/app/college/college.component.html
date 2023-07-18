@@ -6,8 +6,39 @@
         <p style="font-size: 1.2rem;">
             Collège du parc de Villeroy
         </p>
-        <p style="color: #e08e13; font-size: 1rem;">
+        <p (click)="showDialog()" style="color: #e08e13; font-size: 1rem; cursor: pointer">
             Voir plus +
         </p>
     </p-card>
 </div>
+<p-dialog header="Collège / Du Parc de Villeroy" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div>
+        <div>
+            <p class="m-0">
+                Direction : BASILE Sébastien
+            </p>
+            <p class="m-0">
+                Adresse : Av. de Villeroy, 91540 Mennecy
+            </p>
+            <p class="m-0">
+                Tel : 01 64 57 06 40
+            </p>
+            <p class="m-0">
+                Email : ce.0911185U@ac-versailles.fr
+            </p>
+        </div>
+        <br />
+        <div>
+            <h4>Liste des élus de l'établissements</h4>
+            <ul>
+                <li>Mme BLEMUS Cathy | Responsable niveau 6ème</li>
+                <br />
+                <li>Mme LOIRAT Florence | Responsable niveau 5ème</li>
+                <br />
+                <li>M BELGACEM Brahim | Responsable niveau 4ème</li>
+                <br />
+                <li>Mme FERRE Anne | Responsable niveau 3ème</li>
+            </ul>
+        </div>
+    </div>
+</p-dialog>

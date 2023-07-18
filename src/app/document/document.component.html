@@ -1,0 +1,19 @@
+<div class="docPage">
+    <div>
+        <h2 class="textDocPage">Les documents</h2>
+    </div>
+    <div style="text-align: center;">
+        <div class="allDoc" *ngFor="let file of files | slice:first:first+rows">
+            <div class="ensembleDoc">
+                <div class="dooc">
+                    <img class="imgDoc" src="../../assets/fileDocImage.png" alt="fileDocImage.png" />
+                    <div class="blocDoc">
+                        <p>Nom du fichier : {{ truncateText(file.name, 10) }}</p>
+                        <strong><a class="linkDoc" [href]="file.downloadUrl" download>Télécharger</a></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="total"></p-paginator>
+</div>

@@ -6,9 +6,50 @@
     background: linear-gradient(to right, #e08e13 120%, transparent 50%) no-repeat center bottom/5% 4px;
 }
 
-.joinPage {
+.JoinPage {
     margin-top: 60px;
     margin-bottom: 60px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.headerBloc {
+    background-color: #e28308;
+    padding: 1px 15px 1px;
+}
+
+.form {
+    background-color: rgb(243, 243, 243);
+    display: block;
+    padding: 15px 20px 15px;
+}
+
+.form-group {
+    margin: 0px 10px 40px;
+}
+
+.inputContact {
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: rgb(243, 243, 243);
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.messageEnsemble {
+    display: flex;
+}
+
+.footerBloc {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+    padding: 10px 20px 10px;
+    font-size: medium;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
 }

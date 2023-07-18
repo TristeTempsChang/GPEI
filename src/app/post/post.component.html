@@ -5,7 +5,7 @@
                 <p>{{post.type}}</p>
                 <div class="post-image-container" [ngStyle]="{'background-image': 'url(' + post.image + ')', 'background-position': 'center'}"></div>
                 <a style="text-decoration: none;" [routerLink]="['/actualite', post.id]"><p style="font-weight: bold; color: black;">{{post.title}}</p></a>
-                <p>{{post.datePost | date: 'longDate'}}</p>
+                <p>{{post.datePost | date:'dd/MM/yy'}}</p>
             </div>
         </div>
     </div>
