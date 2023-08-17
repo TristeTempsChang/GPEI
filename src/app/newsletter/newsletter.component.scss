@@ -1,0 +1,35 @@
+.titleData {
+    color: #e08e13;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 14px;
+    background: linear-gradient(to right, #e08e13 120%, transparent 50%) no-repeat center bottom/5% 4px;
+}
+
+.emailEnsemble{
+    margin: 30px 60px 60px;
+    border: solid 1px #dee2e6;
+    border-radius: 7px;
+}
+
+.headerEmail {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.couleurEnsemble{
+    margin: 30px 60px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.progress-spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}

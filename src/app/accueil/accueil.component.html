@@ -52,8 +52,41 @@
     <div class="texteNewsletter">
         <h2>Inscrivez vous à notre newsletter</h2>
         <p>Vous pourrez connaître en avance tout les numéros gagnant du loto à venir, ainsi que bien d'autre avantage pour petit et grands !</p>
-        <input class="email" size="60" type="email" placeholder="Entrez une adresse e-mail valide !">
-        <button class="btnSend" type="submit">OK</button>
+        <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+            <div>
+                <input
+                pInputText
+                class="p-inputtext-sm"
+                style="width: 40%;"
+                placeholder="Entrez votre adresse e-mail"
+                formControlName="email"
+                />
+                <button pButton class="btnSend" type="submit">OK</button>
+            </div>
+            <small *ngIf="showInvalidEmailMessage === true" id="email-help" style="color: red;">
+                L'e-mail que vous avez rentré n'est pas valide !
+            </small>
+            <small *ngIf="showInvalidEmailMessage2 === true" id="email-help2" style="color: red;">
+                L'e-mail que vous avez rentré est déjà inscrit !
+            </small>
+        </form>
     </div>
     <img class="flyers" src="https://www.mennecy.net/_media/img/small/gpei-flyer.png" alt="flyers" />
 </div>
+
+<p-dialog [(visible)]="showInvalidEmailMessage3" [showHeader]="false" [modal]="true" [style]="{ width: '50vw' }">
+    <p>
+        <br />
+        <br />
+        Votre adresse e-mail a bien été enregistrée. 
+        <br />
+        <br />
+        Vous êtes désormais inscrit à notre newsletter !
+        <br />
+        <br />
+        Si vous êtes ahdérent à notre association, vous pourrez accéder à des rappels de réunions ainsi qu'à d'autres exclusivités.
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="onAdd(emailForm.value)" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

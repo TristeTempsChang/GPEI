@@ -32,10 +32,6 @@ export class PostListService {
     return addDoc($postRef, post);
   }
 
-  modifyPost() {
-
-  }
-
   deletePost(id: string) {
     let $postRef = doc(this.firestore, "Post/" + id);
     return deleteDoc($postRef);

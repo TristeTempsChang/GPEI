@@ -1,0 +1,133 @@
+<br />
+<br />
+<div class="ensembleData">
+    <div class="bloc1">
+        <h2 class="titleData">Demandes d'adhésions</h2>
+        <br />
+            <div class="Table1">
+                <p-table [value]="adherentData" [(selection)]="selectedData" dataKey="name">
+                    <ng-template pTemplate="caption">
+                        <div class="flex">
+                            <button [disabled]="!selectedData || !selectedData.length" style="background-color: #e08e13; border: 1px solid #e08e13;" (click)="AddAdherent()" pButton><i class="pi pi-plus" style="margin-right: 7px;"></i>Ajouter à la liste</button>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 5rem"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
+                            <th>Nom Prénom</th>
+                            <th>Adresse</th>
+                            <th>Code postal / Ville</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-adherent>
+                        <tr>
+                            <td>
+                                <p-tableCheckbox [value]="adherent"></p-tableCheckbox>
+                            </td>
+                            <td>{{adherent.name}}</td>
+                            <td>{{adherent.adress}}</td>
+                            <td>{{adherent.cpv}}</td>
+                            <td>{{adherent.email}}</td>
+                            <td>{{adherent.tel}}</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="6">Aucune demandes d'adhésion n'a été faite...</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="bloc1">
+        <h2 class="titleData">Liste des adhérents</h2>
+        <br />
+        <div class="Table2">
+            <p-table [value]="adherentDataTrue" dataKey="name" rowExpandMode="single" selectionMode="single" [(selection)]="selectedDataTrue">
+                <ng-template pTemplate="caption">
+                    <div>
+                        <button type="button" style="margin-right: 10px;" (click)="exportExcel()" pButton pRipple icon="pi pi-file-excel"  class="p-button-success mr-2" pTooltip="XLS" tooltipPosition="bottom"></button>
+                        <button style="background-color: red; border: 1px solid red;" (click)="deleteAdherent()" pButton icon="pi pi-trash" [disabled]="!selectedDataTrue"></button>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 5rem"></th>
+                        <th>Nom Prénom</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-adherent let-expanded="expanded">
+                    <tr [pSelectableRow]="adherent">
+                        <td>
+                            <button type="button" pButton pRipple (click)="getDataById(adherent.id)" [pRowToggler]="adherent" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                        </td>
+                        <td>{{adherent.name}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="rowexpansion" let-adherent>
+                    <tr>
+                        <td>
+                            <p-table [value]="[adherentDataById]" styleClass="p-datatable-gridlines">
+                                <ng-template pTemplate="caption"> Informations </ng-template>
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Adresse</th>
+                                        <th>Code postal / ville</th>
+                                        <th>Email</th>
+                                        <th>Téléphone</th>
+                                        <th>Cotisation</th>
+                                        <th>Engagement</th>
+                                        <th>Poste</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-adherent>
+                                    <tr>
+                                        <td>{{ adherent.adress }}</td>
+                                        <td>{{ adherent.cpv }}</td>
+                                        <td>{{ adherent.email }}</td>
+                                        <td>{{ adherent.tel }}</td>
+                                        <td>{{ adherent.choix }}</td>
+                                        <td>{{ adherent.engage }}</td>
+                                        <td>{{ adherent.poste }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>                            
+                        </td>
+                        <td>
+                            <p-table [value]="adherent.enfant" styleClass="p-datatable-gridlines">
+                                <ng-template pTemplate="caption"> Enfants </ng-template>
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Nom Prénom</th>
+                                        <th>Etablissement</th>
+                                        <th>Niveau classe</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-adherent>
+                                    <tr>
+                                        <td>{{ adherent.NameFirstName }}</td>
+                                        <td>{{ adherent.etablissement }}</td>
+                                        <td>{{ adherent.lvl }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>                            
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="6">Il n'y a aucun adhérent actuellement...</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>

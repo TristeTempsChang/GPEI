@@ -36,6 +36,10 @@ import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.compon
 import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
 import { DocumentComponent } from './document/document.component';
 import { AddDocComponent } from './add-doc/add-doc.component';
+import { AdminAdherentComponent } from './admin-adherent/admin-adherent.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { AdherentService } from './Service/adherent.service';
+import { NewsletterService } from './Service/newsletter.service';
 
 //Module PrimeNG
 import { CarouselModule } from 'primeng/carousel';
@@ -57,6 +61,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
+import { CheckboxModule } from 'primeng/checkbox';
+import { TagModule } from 'primeng/tag';
 
 //Module firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -92,7 +98,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     QuiSommesNousComponent,
     JoinGPEIComponent,
     DocumentComponent,
-    AddDocComponent
+    AddDocComponent,
+    AdminAdherentComponent,
+    NewsletterComponent
   ],
   imports: [
     HttpClientModule,
@@ -119,13 +127,15 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     PaginatorModule,
     ProgressSpinnerModule,
     TableModule,
+    CheckboxModule,
     ToolbarModule,
+    TagModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule
   ],
-  providers: [loginService, PostListService],
+  providers: [loginService, PostListService, AdherentService, NewsletterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

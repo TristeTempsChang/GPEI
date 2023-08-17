@@ -14,7 +14,7 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content" style="display: none;">
-                    <a routerLink="qui-sommes-nous-?">Qui sommes-nous ?</a>
+                    <a (click)="noneDropDownresp()" routerLink="qui-sommes-nous-?">Qui sommes-nous ?</a>
                     <a (click)="noneDropDownresp()" routerLink="membre">Nos membres</a>
                 </div>
             </span>
@@ -24,7 +24,6 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content" style="display: none;">
-                    <a href="#">Gestion du carrousel</a>
                     <a (click)="noneDropDownresp()" routerLink="addPost">Gestion des actualités</a>
                 </div>
             </span>
@@ -36,8 +35,6 @@
                 <div id="dropdownresp-content2" style="display: none;">
                     <a (click)="noneDropDownresp()" routerLink="actualite">Actualités</a>
                     <a (click)="noneDropDownresp()" routerLink="document">Documentation</a>
-                    <a href="#">Lettre d'infos</a>
-                    <a href="#">Revue utile</a>
                 </div>
             </span>
             <span class="relieur2" id="menu2" (click)="displayDropMenuContent2()" *ngIf="authenticate">
@@ -47,8 +44,6 @@
                 </span>
                 <div id="dropdownresp-content2" style="display: none;">
                     <a (click)="noneDropDownresp()" routerLink="addDoc">Gestion des documents disponible</a>
-                    <a href="#">Gestion des lettres d'infos</a>
-                    <a href="#">Gestion des revues</a>
                 </div>
             </span>
             <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()" *ngIf="!authenticate">
@@ -57,8 +52,8 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content3" style="display: none;">
-                    <a routerLink="pourquoi-adherer?">Pourquoi adhérer ?</a>
-                    <a routerLink="nous-rejoindre">Rejoindre la GPEI</a>
+                    <a (click)="noneDropDownresp()" routerLink="pourquoi-adherer?">Pourquoi adhérer ?</a>
+                    <a (click)="noneDropDownresp()" routerLink="nous-rejoindre">Rejoindre la GPEI</a>
                 </div>
             </span>
             <span class="relieur2" id="menu3" (click)="displayDropMenuContent3()" *ngIf="authenticate">
@@ -67,8 +62,8 @@
                     <img id="logo4" [src]="plusIconUrl" alt="plus_icon" />
                 </span>
                 <div id="dropdownresp-content3" style="display: none;">
-                    <a href="#">Liste des demandes</a>
-                    <a href="#">Envoi de mail</a>
+                    <a (click)="noneDropDownresp()" routerLink="adminAdherent">Liste des demandes</a>
+                    <a (click)="noneDropDownresp()" routerLink="adminNewsletter">Envoi de mail</a>
                 </div>
             </span>
             <span class="relieur2" id="menu4" (click)="displayDropMenuContent4()" *ngIf="!authenticate">
@@ -135,7 +130,6 @@
         <span class="relieur" *ngIf="authenticate">
             <a class="font">GESTION</a>
             <div class="dropdown-content">
-                <a href="#">Gestion du carrousel</a>
                 <a routerLink="addPost">Gestion des actualités</a>
             </div>
         </span>
@@ -144,16 +138,12 @@
             <div class="dropdown-content2">
                 <a routerLink="actualite" >Actualités</a>
                 <a routerLink="document">Documentation</a>
-                <a href="#">Lettre d'infos</a>
-                <a href="#">Revue utile</a>
             </div>
         </span>
         <span class="relieur" *ngIf="authenticate">
             <a class="font">DOCUMENTATION</a>
             <div class="dropdown-content2">
                 <a routerLink="addDoc">Gestion des documents disponible</a>
-                <a href="#">Gestion des lettres d'infos</a>
-                <a href="#">Gestion des revues</a>
             </div>
         </span>
         <span class="relieur" *ngIf="!authenticate">
@@ -166,8 +156,8 @@
         <span class="relieur" *ngIf="authenticate">
             <a class="font">ADHÉRENT</a>
             <div class="dropdown-content3">
-                <a href="#">Liste des demandes</a>
-                <a href="#">Envoi de mail</a>
+                <a routerLink="adminAdherent">Liste des demandes</a>
+                <a routerLink="adminNewsletter">Envoi de mail</a>
             </div>
         </span>
         <span class="relieur" *ngIf="!authenticate">

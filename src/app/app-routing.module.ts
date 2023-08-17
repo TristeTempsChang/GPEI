@@ -18,6 +18,8 @@ import { QuiSommesNousComponent } from './qui-sommes-nous/qui-sommes-nous.compon
 import { JoinGPEIComponent } from './join-gpei/join-gpei.component';
 import { DocumentComponent } from './document/document.component';
 import { AddDocComponent } from './add-doc/add-doc.component';
+import { AdminAdherentComponent } from './admin-adherent/admin-adherent.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 const routes: Routes = [
   { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard]},
@@ -36,7 +38,9 @@ const routes: Routes = [
   { path: 'qui-sommes-nous-?', component: QuiSommesNousComponent},
   { path: 'nous-rejoindre', component: JoinGPEIComponent},
   { path: 'document', component: DocumentComponent},
-  { path: 'addDoc', component: AddDocComponent, /*canActivate: [AuthGuard]*/},
+  { path: 'addDoc', component: AddDocComponent, canActivate: [AuthGuard]},
+  { path: 'adminAdherent', component: AdminAdherentComponent, canActivate: [AuthGuard]},
+  { path: 'adminNewsletter', component: NewsletterComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -145,9 +145,13 @@
 
 .btnSend {
   border: none;
+  background-color: grey;
   padding: 10px;
   margin-left: 10px;
   cursor: pointer;
+  &:hover{
+    background-color: grey;
+  }
 }
 
 .titre_bloc4 {

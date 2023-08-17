@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostListService } from '../Service/post-list.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AdherentService } from '../Service/adherent.service';
 
 @Component({
   selector: 'app-accueil-admin',
@@ -14,13 +17,19 @@ export class AccueilAdminComponent implements OnInit {
   data: any;
   options: any;
 
-  constructor(){
-
-  }
+  constructor(private postService: PostListService, private storage: AngularFireStorage, private adherentService: AdherentService){}
   ngOnInit(): void {
+    this.postService.getPost().subscribe(element => {
+        this.numberGestion = element.length;
+    })
+    this.adherentService.getAdherent().subscribe((data) => {
+        this.numberAdherent = data.filter((dataFilter) => dataFilter.accepted === true).length;
+      })
+    const directoryRef = this.storage.ref('doc/');
+    directoryRef.listAll().subscribe(result => {
+        this.numberDoc = result.items.length;
+    })
     this.numberAdherent = 100;
-    this.numberGestion = 8;
-    this.numberDoc = 90;
     this.numberMail = 300;
 
     const documentStyle = getComputedStyle(document.documentElement);

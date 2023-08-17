@@ -77,8 +77,7 @@ export class AddDocComponent implements OnInit{
                 this.messageService.add({severity: 'info', summary: 'Le fichier a été supprimé avec succès !', detail: ''});
                 this.loadFiles();
               }, error => {
-                // Gestion de l'erreur lors de la suppression du fichier
-                console.error('Erreur lors de la suppression du fichier:', error);
+                this.messageService.add({severity: 'error', summary: 'Erreur lors de la suppression du fichier:', detail: error});
               });
             });
           }
@@ -98,7 +97,7 @@ export class AddDocComponent implements OnInit{
   }
 
   loadFiles() {
-    this.files = []; // Réinitialisez la liste des fichiers
+    this.files = [];
 
     const directoryRef = this.storage.ref('doc/');
 

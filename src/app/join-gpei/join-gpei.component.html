@@ -6,38 +6,138 @@
     <div class="ensembleTextewhy">
         <div class="formContent">
             <div class="headerBloc">
-                <h2 style="color: #965602;">Mes informations</h2>
+                <h2 style="color: #965602;">Bulletin d'adhésion</h2>
             </div>
             <div class="form">
-                <form>   
+                <p class="title1"><strong>Informations personnelles</strong></p>
+                <br />
+                <form [formGroup]="AdhesionForm">   
                     <div class="form-group">
-                        <label for="name" style="margin-right: 40px; font-weight: bold; color: grey;">Nom * :</label>
+                        <label for="name" style="margin-right: 40px; font-weight: bold; color: grey;">Nom et Prénom* :</label>
                         <input class="inputContact" name="name" type="text" size="60" formControlName="name">
                     </div>
                     <div class="form-group">
-                        <label for="firstName" style="margin-right: 40px; font-weight: bold; color: grey;">Prénom * :</label>
-                        <input class="inputContact" name="firstName" type="text" size="60" formControlName="firstName">
+                        <label for="adress" style="margin-right: 40px; font-weight: bold; color: grey;">Adresse * :</label>
+                        <input class="inputContact" name="adress" type="text" size="60" formControlName="adress">
                     </div>
                     <div class="form-group">
-                        <label for="email" style="margin-right: 40px; font-weight: bold; color: grey;">E-mail :</label>
+                        <label for="cpv" style="margin-right: 40px; font-weight: bold; color: grey;">Code postal et ville :</label>
+                        <input class="inputContact" name="cpv" type="text" size="60" formControlName="cpv">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel" style="margin-right: 40px; font-weight: bold; color: grey;">Téléphone :</label>
+                        <input class="inputContact" name="tel" type="text" size="60" formControlName="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="margin-right: 20px; font-weight: bold; color: grey;">E-mail :</label>
                         <input class="inputContact" name="email" type="email" size="60" formControlName="email">
                     </div>
+                    <br />
+                    <p class="title1"><strong>Enfant(s) Concerné(s) :</strong></p>
+                    <br />
+                    <div formArrayName="enfant">
+                        <div class="formCss" *ngFor="let child of enfantFormArray.controls; let i = index" [formGroupName]="i">
+                            <br />
+                            <div>
+                                <div class="form-group">
+                                    <label for="NameFirstName" style="margin-right: 40px; font-weight: bold; color: grey;">Nom et Prénom :</label>
+                                    <input class="inputContact" name="NameFirstName" type="text" size="60" formControlName="NameFirstName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="etablissement" style="margin-right: 20px; font-weight: bold; color: grey;">Etablissement :</label>
+                                    <input class="inputContact" name="etablissement" type="text" size="60" formControlName="etablissement">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lvl" style="margin-right: 20px; font-weight: bold; color: grey;">Niveau :</label>
+                                    <input class="inputContact" name="lvl" type="text" size="60" formControlName="lvl">
+                                </div>
+                            </div>
+                            <div *ngIf="i > 0">
+                                <button (click)="removeChild(i)" style="background-color: red; border: 1px solid red; margin-left: 80px;" pButton icon="pi pi-trash"></button>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div>
+                        <button (click)="addChild()" style="background-color: #e08e13; border: 1px solid #e08e13;" pButton icon="pi pi-plus"></button>
+                    </div>
+                    <br />
+                    <p class="title1"><strong>Votre engagement au sein du GPEI cette année :</strong></p>
+                    <br />
                     <div class="form-group">
-                        <label for="subject" style="margin-right: 40px; font-weight: bold; color: grey;">Sujet :</label>
-                        <input class="inputContact" name="subject" type="text" size="60" formControlName="subject">
+                        <input type="checkbox" id="ecole" name="engage" value="Parent délégué au conseil d'école ( pour les maternelles et les élémentaires )" formControlName="engage" (change)="onEngagementChange($event)">
+                        <label for="engage">Parent délégué au conseil d'école ( pour les maternelles et les élémentaires )</label>
                     </div>
                     <div class="form-group">
-                        <span class="messageEnsemble">
-                        <label for="message" style="margin-right: 20px; font-weight: bold; color: grey;">Message :</label>
-                        <textarea style="border: none; background-color: rgb(223, 223, 223); outline: none; font-size: 1rem;" name="message" rows="10" cols="63" formControlName="message"></textarea>
-                        </span>
+                        <input type="checkbox" id="college" name="engage" value="Parent délégué au conseil de classe du Collège" formControlName="engage" (change)="onEngagementChange($event)">
+                        <label for="engage">Parent délégué au conseil de classe du Collège</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="admin_college" name="engage" value="Parent délégué au conseil d'administration du Collège" formControlName="engage" (change)="onEngagementChange($event)">
+                        <label for="engage">Parent délégué au conseil d'administration du Collège</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="classe_lycee" name="engage" value="Parent délégué au conseil de classe du Lycée" formControlName="engage" (change)="onEngagementChange($event)">
+                        <label for="engage">Parent délégué au conseil de classe du Lycée</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="admin_lycee" name="engage" value="Parent délégué au conseil d'administration du Lycée" formControlName="engage" (change)="onEngagementChange($event)">
+                        <label for="engage">Parent délégué au conseil d'administration du Lycée</label>
+                    </div>
+                    <br />
+                    <p class="title1"><strong>Je me propose au poste de : ( facultatif )</strong></p>
+                    <br />
+                    <div class="form-group">
+                        <input type="checkbox" id="president" name="poste" formControlName="poste" [checked]="currentlyChecked2 === check_box_type2.president" (click)="selectCheckBox2(check_box_type2.president)">
+                        <label for="president">Président(e) de l'Association</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="engage" name="poste" formControlName="poste" [checked]="currentlyChecked2 === check_box_type2.secretaire" (click)="selectCheckBox2(check_box_type2.secretaire)">
+                        <label for="poste">Secrétaire du GPEI</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="engage" name="poste" formControlName="poste" [checked]="currentlyChecked2 === check_box_type2.tresorier" (click)="selectCheckBox2(check_box_type2.tresorier)">
+                        <label for="poste">Trésorier du GPEI</label>
+                    </div>
+                    <br />
+                    <p style="text-align: center;"><strong>Réglement de votre cotisatition en :</strong></p>
+                    <br />
+                    <div class="reglement">
+                        <div class="form-group">
+                            <input type="checkbox" id="engage" name="choix" [checked]="currentlyChecked === check_box_type.espece" (click)="selectCheckBox(check_box_type.espece)" formControlName="choix">
+                            <label for="choix">Virement</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="engage" name="choix" formControlName="choix" [checked]="currentlyChecked === check_box_type.cheque" (click)="selectCheckBox(check_box_type.cheque)">
+                            <label for="choix">Chèque</label>
+                        </div>
                     </div>
                     <div class="footerBloc">
-                        <em>* champs obligatoires</em>
-                        <button type="submit">Envoyer votre message</button>
+                        <button type="submit" (click)="onSubmitForm()">Soumettre votre bulletin d'adhésion</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<p-dialog header="Cotisation par chèque" [(visible)]="visibleCheque" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <p class="m-0">
+        Vous avez sélectionné l'option de cotisation par chèque.<br />
+        <br />
+        Afin de conclure définitivement votre adhésion, veuillez le retourner à l'adresse suivante : 65 Bd Charles de Gaulle, 91540 Mennecy
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="compris()" label="Compris !" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+<p-dialog header="Cotisation par virement" [(visible)]="visibleEspece" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <p class="m-0">
+        Vous avez sélectionné l'option de cotisation par virement.<br />
+        <br />
+        Afin de conclure définitivement votre adhésion, un mail contenant le RIB où effectuer le virement vous sera envoyé à l'adresse mail que vous avez indiqué.
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="compris()" label="Compris !" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
