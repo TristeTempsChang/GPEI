@@ -29,8 +29,7 @@ export class AccueilAdminComponent implements OnInit {
     directoryRef.listAll().subscribe(result => {
         this.numberDoc = result.items.length;
     })
-    this.numberAdherent = 100;
-    this.numberMail = 300;
+    this.numberMail = 200;
 
     const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');

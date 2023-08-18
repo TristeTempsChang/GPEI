@@ -1,4 +1,7 @@
-<div style="text-align:center;">
+<div *ngIf="posts.length === 0" class="loading-container">
+    <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+</div>
+<div style="text-align:center;" *ngIf="posts.length > 0">
     <div *ngFor="let post of posts | slice:first:first+rows" class="container">
         <div class="ensembleCorps">
             <div class="newsletter">

@@ -53,6 +53,13 @@
   .custom-next-button {
     right: 5%;
   }
+
+  .loading-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+  }
   
 
   @media screen and (max-width: 425px) {

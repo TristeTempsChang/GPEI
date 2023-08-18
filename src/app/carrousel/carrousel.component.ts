@@ -21,7 +21,7 @@ export class CarrouselComponent implements AfterViewInit {
   }
 
   ngOnInit(): void {
-    
+    this.posts
   }
 
 }

@@ -7,7 +7,7 @@
         <p-organizationChart [value]="data">
             <ng-template let-node pTemplate="person">
                 <div class="p-5 text-center">
-                    <img [src]="node.data.image" class="img" />
+                    <p-avatar [label]="node.data.image" size="xlarge" shape="circle"></p-avatar>
                     <div class="font-bold">{{ node.data.name }}</div>
                     <div>{{ node.data.title }}</div>
                     <div>{{ node.data.title2 }}</div>

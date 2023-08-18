@@ -1,12 +1,17 @@
-<p-carousel [value]="posts" [showIndicators]= false [circular]= true [showNavigators]= false [numVisible]="1" [numScroll]="1" [autoplayInterval]= 5500>
-    <ng-template let-post pTemplate="item">
-        <div class="ensemble">
-            <div class="image-wrapper">
-                <img class="Image" src="{{ post.image }}" alt="{{ post.title }}">
+<div *ngIf="posts.length === 0" class="loading-container">
+    <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+</div>
+<div *ngIf="posts.length > 0">
+    <p-carousel [value]="posts" [showIndicators]= false [circular]= true [showNavigators]= false [numVisible]="1" [numScroll]="1" [autoplayInterval]= 5500>
+        <ng-template let-post pTemplate="item">
+            <div class="ensemble">
+                <div class="image-wrapper">
+                    <img class="Image" src="{{ post.image }}" alt="{{ post.title }}">
+                </div>
+                <div class="Texte">
+                    <h1>{{post.title}}</h1> 
+                </div>
             </div>
-            <div class="Texte">
-                <h1>{{post.title}}</h1> 
-            </div>
-        </div>
-    </ng-template>
-</p-carousel>
+        </ng-template>
+    </p-carousel>
+</div>

@@ -123,17 +123,11 @@
 .inscriptionNewsletter {
   margin: 0px 20px 40px;
   background-color: rgb(197, 197, 197);
-  display: flex;
 }
 
 .texteNewsletter {
-  padding: 50px 50px 60px;
-}
-
-.flyers {
-  height: 230px;
-  margin: 25px 100px 0px;
-  box-shadow: 0px 0px 10px 7px grey;
+  text-align: center;
+  padding: 10px 30px 30px;
 }
 
 .email {
@@ -163,5 +157,144 @@
   &:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .parent {
+    display: block;
+    margin: 50px 15px 50px;
+    justify-content: center;
+  }
+
+  .div1 { 
+    background-color: rgb(106, 106, 255);
+    color: white;
+    text-align: center;
+    padding: 20px 0px 20px;
+  }
+
+  .textDiv1 {
+    display: none;
+  }
+
+  .textDiv2 {
+    display: none;
+  }
+
+  .titre_bloc {
+    margin-top: 0px;
+    font-size: 2rem;
+  }
+
+  .div2 { 
+    background-color: #e08e13;
+    color: white;
+    text-align: center;
+    padding: 20px 0px 20px;
+  }
+
+  .btnPourquoi {
+    border: none;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    padding: 10px 10px 10px;
+    font-size: 1.275rem;
+    margin-top: 5px;
+    background-color: #c07300;
+    cursor: pointer;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 400ms;
+    &:hover {
+          transform: scale(1.09);
+    }
+  }
+
+  .div3 { 
+    background: linear-gradient(90deg, rgba(109, 109, 109, 0.7) 0%, rgba(160, 160, 160, 0.7) 100%), url('../../assets/ecole2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .div4 { 
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/ecole1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .parent {
+    display: block;
+    margin: 50px auto 50px;
+    justify-content: center;
+  }
+
+  .div1 { 
+    background-color: rgb(106, 106, 255);
+    color: white;
+    text-align: center;
+    padding: 20px 0px 20px;
+  }
+
+  .div2 { 
+    background-color: #e08e13;
+    color: white;
+    text-align: center;
+    padding: 20px 0px 20px;
+  }
+
+  .titre_bloc {
+    margin-top: 0px;
+    font-size: 1.8rem;
+  }
+
+  .div3 { 
+    background: linear-gradient(90deg, rgba(109, 109, 109, 0.7) 0%, rgba(160, 160, 160, 0.7) 100%), url('../../assets/ecole2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .div4 { 
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/ecole1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .post-image-container {
+    width: 250px;
+    height: 145px;
+    background-size: cover;
+  }
+
+  .container {
+    display: inline-block; 
+    font-size: small;
   }
 }

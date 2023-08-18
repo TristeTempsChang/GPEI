@@ -2,7 +2,10 @@
     <div>
         <h2 class="textDocPage">Les documents</h2>
     </div>
-    <div style="text-align: center;">
+    <div *ngIf="files.length === 0" class="loading-container">
+        <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+    </div>
+    <div style="text-align: center;" *ngIf="files.length > 0">
         <div class="allDoc" *ngFor="let file of files | slice:first:first+rows">
             <div class="ensembleDoc">
                 <div class="dooc">

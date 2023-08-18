@@ -13,9 +13,9 @@ export class MembresComponent {
             type: 'person',
             styleClass: 'blue-bg',
             data: {
-                image: '../../assets/gaelle-test.png',
+                image: 'G',
                 name: 'Mme LALLEMENT Gaëlle',
-                title: 'Présidente / Communication avec la Maire',
+                title: '- Présidente / Communication avec la Mairie',
             },
             children: [
                 {
@@ -23,8 +23,8 @@ export class MembresComponent {
                     type: 'person',
                     styleClass: 'bg-purple-500 text-white',
                     data: {
-                        image: '../../assets/gaelle-test.png',
-                        name: 'COSTY Corinne',
+                        image: 'C',
+                        name: 'Mme COSTY Corinne',
                         title: '- Vice-présidente',
                         title2: '- Secrétaire',
                         title3: '- Elue du lycée'
@@ -35,7 +35,7 @@ export class MembresComponent {
                             type: 'person',
                             styleClass: 'bg-purple-500 text-white',
                             data: {
-                                image: '../../assets/gaelle-test.png',
+                                image: 'C',
                                 name: 'BUQUET Celine',
                                 title: '- Responsable niveau 2nd'
                             }
@@ -47,45 +47,82 @@ export class MembresComponent {
                     type: 'person',
                     styleClass: 'bg-teal-500 text-white',
                     data: {
-                        image: '../../assets/gaelle-test.png',
-                        name: 'Stephen Shaw',
-                        title: 'CTO'
+                        image: 'A',
+                        name: 'Mme Aurélie LANDOLFI',
+                        title: '- Vice-présidente',
+                        title2: '- Elue du Collège'
                     },
                     children: [
                         {
                             type: 'person',
                             styleClass: 'bg-teal-500 text-white',
                             data: {
-                                image: '../../assets/gaelle-test.png',
-                                name: 'Stephen Shaw',
-                                title: 'CTO'
+                                image: 'M',
+                                name: 'Mme TABORET Marina',
+                                title: '- Elue à la Maternelle Les Myrtilles'
                             },
                         },
                         {
                             type: 'person',
                             styleClass: 'bg-teal-500 text-white',
                             data: {
-                                image: '../../assets/gaelle-test.png',
-                                name: 'Stephen Shaw',
-                                title: 'CTO'
+                                image: 'A',
+                                name: 'Mme QUINQUET Aurélie',
+                                title: "- Elue à l'Elémentaire des Myrtilles"
                             },
                         },
                         {
                             type: 'person',
                             styleClass: 'bg-teal-500 text-white',
                             data: {
-                                image: '../../assets/gaelle-test.png',
-                                name: 'Stephen Shaw',
-                                title: 'CTO'
+                                image: 'E',
+                                name: 'Mme ALPHONSI Estelle',
+                                title: '- Elue à La Jeannotte Maternelle'
                             },
                         },
                         {
                             type: 'person',
                             styleClass: 'bg-teal-500 text-white',
                             data: {
-                                image: '../../assets/gaelle-test.png',
-                                name: 'Stephen Shaw',
-                                title: 'CTO'
+                                image: 'N',
+                                name: 'Mme HAMIMED Nasserine',
+                                title: '- Elue à La Jeannotte Elémentaire'
+                            },
+                        },
+                        {
+                            type: 'person',
+                            styleClass: 'bg-teal-500 text-white',
+                            data: {
+                                image: 'C',
+                                name: 'Mme BLEMUS Cathy',
+                                title: '- Responsable niveau 6ème'
+                            },
+                        },
+                        {
+                            type: 'person',
+                            styleClass: 'bg-teal-500 text-white',
+                            data: {
+                                image: 'F',
+                                name: 'Mme LOIRAT Florence',
+                                title: '- Responsable niveau 5ème'
+                            },
+                        },
+                        {
+                            type: 'person',
+                            styleClass: 'bg-teal-500 text-white',
+                            data: {
+                                image: 'B',
+                                name: 'M BELGACEM Brahim',
+                                title: '- Responsable niveau 4ème'
+                            },
+                        },
+                        {
+                            type: 'person',
+                            styleClass: 'bg-teal-500 text-white',
+                            data: {
+                                image: 'A',
+                                name: 'Mme FERRE Anne',
+                                title: '- Responsable niveau 3ème'
                             },
                         }
                     ]
@@ -95,9 +132,9 @@ export class MembresComponent {
                     type: 'person',
                     styleClass: 'bg-teal-500 text-white',
                     data: {
-                        image: '../../assets/gaelle-test.png',
-                        name: 'Stephen Shaw',
-                        title: 'CTO'
+                        image: 'F',
+                        name: 'Mme DELALANDRE Fallone',
+                        title: '- Trésorière'
                     },
                 },
                 {
@@ -105,9 +142,9 @@ export class MembresComponent {
                     type: 'person',
                     styleClass: 'bg-teal-500 text-white',
                     data: {
-                        image: '../../assets/gaelle-test.png',
-                        name: 'Stephen Shaw',
-                        title: 'CTO'
+                        image: 'C',
+                        name: 'M. BOUTIN Clément',
+                        title: '- Représentant à la commission des Menus de Mennecy'
                     },
                 },
                 {
@@ -115,9 +152,9 @@ export class MembresComponent {
                     type: 'person',
                     styleClass: 'bg-teal-500 text-white',
                     data: {
-                        image: '../../assets/gaelle-test.png',
-                        name: 'Stephen Shaw',
-                        title: 'CTO'
+                        image: 'J',
+                        name: 'M. Jean PORCHET',
+                        title: '- Communication digitale'
                     },
                 }
             ]
