@@ -48,7 +48,7 @@
 }
 
 .titleWhy {
-    font-size: 2.875rem;
+    font-size: 7vh;
 }
 
 .btnAdherer {
@@ -65,5 +65,31 @@
     transition-duration: 400ms;
     &:hover {
           transform: scale(1.09);
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .whyPage {
+        margin: 60px;
+    }
+
+    .ensembleTextewhy {
+        display: block;
+    }
+
+    .btnAdherer{
+        text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .titleWhy {
+        font-size: 5vh;
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    .titleWhy {
+        font-size: 4vh;
     }
   }

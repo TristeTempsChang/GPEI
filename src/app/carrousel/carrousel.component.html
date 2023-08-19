@@ -1,5 +1,5 @@
 <div *ngIf="posts.length === 0" class="loading-container">
-    <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+    <p-progressSpinner styleClass="custom-spinner" styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
 </div>
 <div *ngIf="posts.length > 0">
     <p-carousel [value]="posts" [showIndicators]= false [circular]= true [showNavigators]= false [numVisible]="1" [numScroll]="1" [autoplayInterval]= 5500>

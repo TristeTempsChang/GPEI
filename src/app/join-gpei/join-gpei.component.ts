@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdherentService } from '../Service/adherent.service';
 import * as emailjs from 'emailjs-com';
 
@@ -30,26 +30,26 @@ export class JoinGPEIComponent implements OnInit {
 
   ngOnInit(): void {
     this.AdhesionForm = this.formBuilder.group({
-      name: new FormControl(''),
-      adress: new FormControl(''),
-      cpv: new FormControl(''),
-      tel: new FormControl(''),
-      email: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      adress: new FormControl('', [Validators.required]),
+      cpv: new FormControl('', [Validators.required]),
+      tel: new FormControl('', [Validators.required]),
+      email: new FormControl('', {validators: [Validators.required, Validators.email]}),
       enfant: this.formBuilder.array([
         this.createChildFormGroup()
       ]),
-      engage: new FormControl(''),
+      engage: new FormControl('',[Validators.required]),
       poste: new FormControl(''),
-      choix: new FormControl(''),
+      choix: new FormControl('',[Validators.required]),
       accepted: false
     })
   }
 
   createChildFormGroup(): FormGroup {
     return this.formBuilder.group({
-      NameFirstName: new FormControl(''),
-      etablissement: new FormControl(''),
-      lvl: new FormControl('')
+      NameFirstName: new FormControl('', [Validators.required]),
+      etablissement: new FormControl('', [Validators.required]),
+      lvl: new FormControl('', [Validators.required])
     });
   }
 

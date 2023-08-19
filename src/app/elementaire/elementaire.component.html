@@ -1,12 +1,12 @@
 <div style="text-align:center;">
-    <p-card *ngFor="let ecole of elementaire" header="{{ecole.title}}" [style]="{ 'width': '360px', 'font-size': '1.5rem', 'font-weight': 'bold'}" styleClass="my-card">
+    <p-card *ngFor="let ecole of elementaire" header="{{ecole.title}}" styleClass="my-card">
         <ng-template pTemplate="header">
             <img alt="Card" style="border-radius: 10px 10px 0px 0px;" [src]="ecole.img" />
         </ng-template>
-        <p style="font-size: 1.2rem;">
+        <p class="ecoleName">
             {{ecole.name}}
         </p>
-        <p (click)="showDialog(ecole.id)" style="color: #e08e13; font-size: 1rem; cursor: pointer;">
+        <p class="voirPlus" (click)="showDialog(ecole.id)">
             Voir plus +
         </p>
     </p-card>

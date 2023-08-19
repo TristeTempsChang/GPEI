@@ -1,12 +1,12 @@
 <div style="text-align:center;">
-    <p-card header="Lycée" [style]="{ 'width': '360px', 'font-size': '1.5rem', 'font-weight': 'bold'}" styleClass="my-card">
+    <p-card header="Lycée" styleClass="my-card">
         <ng-template pTemplate="header">
             <img alt="Card" style="border-radius: 10px 10px 0px 0px;" src="../../assets/lycee.png" />
         </ng-template>
-        <p style="font-size: 1.2rem;">
+        <p class="ecoleName">
             Lycée polyvalent Marie Laurencin
         </p>
-        <p (click)="showDialog()" style="color: #e08e13; font-size: 1rem; cursor: pointer;">
+        <p class="voirPlus" (click)="showDialog()">
             Voir plus +
         </p>
     </p-card>

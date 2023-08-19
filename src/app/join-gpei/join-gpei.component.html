@@ -6,18 +6,18 @@
     <div class="ensembleTextewhy">
         <div class="formContent">
             <div class="headerBloc">
-                <h2 style="color: #965602;">Bulletin d'adhésion</h2>
+                <h2 style="color: #965602; font-size: 4vh">Bulletin d'adhésion</h2>
             </div>
             <div class="form">
                 <p class="title1"><strong>Informations personnelles</strong></p>
                 <br />
                 <form [formGroup]="AdhesionForm">   
                     <div class="form-group">
-                        <label for="name" style="margin-right: 40px; font-weight: bold; color: grey;">Nom et Prénom* :</label>
+                        <label for="name" style="margin-right: 40px; font-weight: bold; color: grey;">Nom et Prénom :</label>
                         <input class="inputContact" name="name" type="text" size="60" formControlName="name">
                     </div>
                     <div class="form-group">
-                        <label for="adress" style="margin-right: 40px; font-weight: bold; color: grey;">Adresse * :</label>
+                        <label for="adress" style="margin-right: 40px; font-weight: bold; color: grey;">Adresse :</label>
                         <input class="inputContact" name="adress" type="text" size="60" formControlName="adress">
                     </div>
                     <div class="form-group">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="footerBloc">
-                        <button type="submit" (click)="onSubmitForm()">Soumettre votre bulletin d'adhésion</button>
+                        <button type="submit" [disabled]="!AdhesionForm.valid" (click)="onSubmitForm()">Soumettre votre bulletin d'adhésion</button>
                     </div>
                 </form>
             </div>

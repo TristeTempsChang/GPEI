@@ -1,14 +1,68 @@
 :host ::ng-deep {
-    .p-card.p-component {
-      border-radius: 10px;
-      border: 1px solid lightgray;
-      margin: 20px 60px;
-      text-align: center;
-      display: inline-block;
-      align-items: center;
-    }
+  .p-card.p-component {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin: 3vh 9vh;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    font-weight: bold;
+    width: 55vh;
   }
 
-  img {
-    height: 270px;
+  .p-card .p-card-title {
+    font-size: 4vh;
   }
+}
+
+img{
+  height: 36vh;
+}
+
+.ecoleName {
+  font-size: 2.9vh;
+}
+
+.voirPlus{
+  color: #e08e13; 
+  font-size: 2.4vh; 
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 500px) {
+  :host ::ng-deep {
+      .p-card.p-component {
+        box-shadow: lightgray 4px 4px 20px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        text-align: center;
+        display: inline-block;
+        font-size: small;
+      }
+
+      .p-card .p-card-title {
+        font-size: large;
+      }
+    }
+
+    .ecoleName {
+      font-size: medium;
+    }
+
+    .voirPlus{
+      font-size: medium;
+    }
+}
+
+@media screen and (max-width: 440px) {
+  :host ::ng-deep {
+    .p-card.p-component {
+      width: 35vh;
+    }
+  }
+  
+  img {
+    height: 140px;
+  }
+}

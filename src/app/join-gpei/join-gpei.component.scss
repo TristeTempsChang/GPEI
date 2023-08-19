@@ -89,3 +89,25 @@ button {
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 840px) {
+    .inputContact {
+        width: 100%;
+    }
+  }
+
+@media screen and (max-width: 756px) {
+    .title1:before, .title1:after {
+        background-color: rgb(243, 243, 243);
+    }
+  }
+
+  @media screen and (max-width: 518px) {
+    .formCss {
+        display: block;
+    }
+
+    .JoinPage {
+        margin: 20px;
+    }
+  }
