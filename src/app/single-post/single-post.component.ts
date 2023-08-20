@@ -13,7 +13,7 @@ export class SinglePostComponent implements OnInit {
   title: any;
   image: any;
   content: any;
-  type: any;
+  categorie: any;
 
 
   constructor(private postListService: PostListService,
@@ -23,7 +23,7 @@ export class SinglePostComponent implements OnInit {
       this.title = data.title;
       this.image = data.image;
       this.content = data.content;
-      this.type = data.type;
+      this.categorie = data.categorie;
     })
   }
     

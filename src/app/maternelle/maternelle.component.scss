@@ -7,6 +7,7 @@
       display: inline-block;
       align-items: center;
       font-weight: bold;
+      height: 67vh;
       width: 55vh;
     }
 
@@ -37,6 +38,7 @@
           border-radius: 10px;
           border: 1px solid lightgray;
           text-align: center;
+          height: 57vh;
           display: inline-block;
           font-size: small;
         }
@@ -64,5 +66,31 @@
     
     img {
       height: 140px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    :host ::ng-deep {
+      .p-card.p-component {
+        width: 25vh;
+        font-size: x-small;
+        margin: 3vh 4vh;
+        height: 52vh;
+        .p-card .p-card-title {
+          font-size: medium;
+        }
+      }
+    }
+
+      .ecoleName {
+        font-size: small;
+      }
+
+      .voirPlus{
+        font-size: small;
+      }
+    
+    img {
+      height: 100px;
     }
   }

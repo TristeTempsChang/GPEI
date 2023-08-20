@@ -86,10 +86,18 @@
     .titleWhy {
         font-size: 5vh;
     }
+
+    .whyPage {
+        margin: 20px;
+    }
   }
 
   @media screen and (max-width: 330px) {
     .titleWhy {
         font-size: 4vh;
+    }
+
+    .whyPage {
+        margin: 10px;
     }
   }

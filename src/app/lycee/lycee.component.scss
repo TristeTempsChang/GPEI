@@ -2,21 +2,20 @@
   .p-card.p-component {
     border-radius: 10px;
     border: 1px solid lightgray;
-    margin: 3vh 9vh;
+    margin: 60px 10px 60px;
     text-align: center;
     display: inline-block;
     align-items: center;
     font-weight: bold;
-    width: 55vh;
     }
 
   .p-card .p-card-title {
-    font-size: 4vh;
+    font-size: 1.5rem;
     }
   }
 
   img{
-    height: 36vh;
+    height: 34vh;
   }
   
   .ecoleName {
@@ -25,17 +24,11 @@
   
   .voirPlus{
     color: #e08e13; 
-    font-size: 2.4vh; 
+    font-size: 1rem; 
     cursor: pointer;
   }
 
   @media screen and (max-width: 400px) {
-    :host ::ng-deep {
-      .p-card.p-component {
-        width: 38vh;
-      }
-    }
-    
     img {
       height: 160px;
     }

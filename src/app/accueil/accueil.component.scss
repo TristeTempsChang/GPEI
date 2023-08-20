@@ -247,14 +247,14 @@
     background-color: rgb(106, 106, 255);
     color: white;
     text-align: center;
-    padding: 20px 0px 20px;
+    padding: 40px 0px 30px;
   }
 
   .div2 { 
     background-color: #e08e13;
     color: white;
     text-align: center;
-    padding: 20px 0px 20px;
+    padding: 40px 0px 30px;
   }
 
   .titre_bloc {
@@ -271,9 +271,11 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    padding: 40px 0px 30px;
   }
 
   .div4 { 
+    padding: 40px 0px 30px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url('../../assets/ecole1.jpg');
     background-repeat: no-repeat;
     background-position: center center;

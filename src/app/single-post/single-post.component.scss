@@ -1,6 +1,7 @@
-img {
-    width: 705px;
-    height: 390px;
+.titleTexte {
+    font-weight: bold; 
+    font-size: 2.2rem; 
+    color: orange;
 }
 
 .container {
@@ -23,8 +24,38 @@ img {
     text-align: left;
 }
 
+.styleTexte {
+    font-size: 0.9rem; 
+    max-width:100%; 
+    height:auto
+}
+
 .custom-body {
     background: linear-gradient(90deg, #ffefc1 0%, #ffffff 100%);
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .container {
+       width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .container {
+       width: 90%;
+    }
+
+    .titleTexte{
+        font-size: x-large;
+    }
+
+    .styleTexte {
+        font-size: small;
+    }
+
+    .post-image-container {
+        height: 180px;
+    }
   }
