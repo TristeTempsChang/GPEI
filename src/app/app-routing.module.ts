@@ -20,6 +20,7 @@ import { DocumentComponent } from './document/document.component';
 import { AddDocComponent } from './add-doc/add-doc.component';
 import { AdminAdherentComponent } from './admin-adherent/admin-adherent.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { MentionLegaleComponent } from './mention-legale/mention-legale.component';
 
 const routes: Routes = [
   { path: 'addPost', component: AddPostComponent, canActivate: [AuthGuard]},
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'document', component: DocumentComponent},
   { path: 'addDoc', component: AddDocComponent, canActivate: [AuthGuard]},
   { path: 'adminAdherent', component: AdminAdherentComponent, canActivate: [AuthGuard]},
-  { path: 'adminNewsletter', component: NewsletterComponent, canActivate: [AuthGuard]}
+  { path: 'adminNewsletter', component: NewsletterComponent, canActivate: [AuthGuard]},
+  { path: 'mentionsLegales', component: MentionLegaleComponent}
 ];
 
 @NgModule({

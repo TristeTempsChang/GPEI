@@ -11,7 +11,7 @@
                 <div class="dooc">
                     <img class="imgDoc" src="../../assets/fileDocImage.png" alt="fileDocImage.png" />
                     <div class="blocDoc">
-                        <p>Nom du fichier : {{ truncateText(file.name, 10) }}</p>
+                        <p>{{ truncateText(file.name, 25) }}</p>
                         <strong><a class="linkDoc" [href]="file.downloadUrl" download>Télécharger</a></strong>
                     </div>
                 </div>

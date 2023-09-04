@@ -82,6 +82,12 @@
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .titleWhy {
+        font-size: 5vh;
+    }
+  }
+
   @media screen and (max-width: 380px) {
     .titleWhy {
         font-size: 5vh;

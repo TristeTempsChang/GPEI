@@ -72,6 +72,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { MentionLegaleComponent } from './mention-legale/mention-legale.component';
 
 
 
@@ -102,7 +103,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     DocumentComponent,
     AddDocComponent,
     AdminAdherentComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    MentionLegaleComponent
   ],
   imports: [
     HttpClientModule,
